@@ -3,3 +3,34 @@ p{
     font-family: Noto Sans, sans-serif;
     text-align: justify;
 }
+.navbar-expand-lg{
+    background-color: #161616;
+}
+.nav-link{
+    font-size: 35px;
+}
+.navbar-brand{
+    font-size: 50px; 
+}
+#continua-header{
+    background-color: #161616;
+}
+#header-h1{
+    color: white; 
+    font-family: Noto Sans, sans-serif; 
+    font-size: 150px;
+}
+#header-h2{
+    color: white;
+    font-family: Noto Sans, sans-serif;
+    font-size: 70px;
+}
+.span-verde{
+    color: #34AD29;
+}
+.span-roxo{
+    color: #481589;
+}
+#transicao-main{
+    background-image: linear-gradient(#929292, #c0c0c0, rgb(255, 255, 255));
+}
