@@ -31,7 +31,7 @@
           <nav class="navbar navbar-dark bg-none ml-5 mr-5">
             <form class="form-inline">
             <div class="container-fluid">
-              <a href="cadastro.html""><button class="btn btn-success btn-lg" type="button">Cadastre-se</button></a>
+              <a href="cadastro.php"><button class="btn btn-success btn-lg" type="button">Cadastre-se</button></a>
             </div>
         </div>
       </nav>

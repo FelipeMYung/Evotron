@@ -22,8 +22,8 @@
             <label class="form-label">E-mail</label>
         </div>
         <button class="btn btn-success btn-lg" style="width: 24.2vh" type="button">Cadastre-se</button>
-        <h4 class="mt-3">Já possui uma conta?<a href="login.html"> faça login</a></h4>
-        <a id="link-cadastro-inicio" href="index.html">Voltar para o início</a>
+        <h4 class="mt-3">Já possui uma conta?<a href="login.php"> faça login</a></h4>
+        <a id="link-cadastro-inicio" href="index.php">Voltar para o início</a>
     </section>
     </main>
 </body>
