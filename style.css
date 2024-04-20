@@ -87,3 +87,22 @@ section{
     font-size: 14px;
     color: #acacac;
 }
+h4 {
+    font-size: 16px;
+    font-family: Noto Sans, sans-serif;
+}
+#h3-cadastro {
+    font-size: 25px;
+    font-family: Noto Sans, sans-serif;
+    color: #481589;
+}
+#link-cadastro-inicio {
+    text-decoration: none;
+    color: #acacac;
+}
+#link-cadastro-inicio:active {
+    text-decoration: none;
+}
+#link-cadastro-inicio:hover {
+    text-decoration: none;
+}
