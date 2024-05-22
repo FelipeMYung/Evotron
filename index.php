@@ -30,7 +30,7 @@
           <a class="nav-link" href="#">Sobre</a>
         </li>
       </ul>
-      <a href="cadastro.html"><button class="btn btn-success btn-lg">Cadastre-se</button></a>
+      <a href="cadastro.php"><button class="btn btn-success btn-lg">Cadastre-se</button></a>
     </div>
   </nav>
   
