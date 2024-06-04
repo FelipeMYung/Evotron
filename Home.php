@@ -6,12 +6,16 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+  <header>
+    <nav>
+        <p><a href="#">Login</a></p>
+        <p><a href="#">Sobre</a></p>
+        <p><a href="#">Contato</a></p>
+    </nav>
+  </header>
   <div class="container">
     <div class="section">
       <div class="header">
-        <div>
-          <div class="icon"></div>
-        </div>
         <div class="user">
           <p>Olá, "Usuário"</p>
           <p>04/05/2024</p>

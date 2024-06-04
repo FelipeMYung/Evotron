@@ -113,3 +113,17 @@ body {
   .progress-category-title {
     font-weight: bold;
   }
+header{
+  height: 150px;
+  width: 100%;
+  background-color: rgb(98, 89, 89);
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+a{
+  font-size: 30px;
+  margin-left: 50px;
+}
