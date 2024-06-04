@@ -1,108 +1,115 @@
 /* HOME PAGE CSS!! */
-
-p{
-    font-size: 30px;
-    font-family: Noto Sans, sans-serif;
-    text-align: justify;
-}
-.navbar-expand-lg{
-    background-color: #161616;
-}
-.nav-link{
-    font-size: 35px;
-}
-.navbar-brand{
-    font-size: 50px; 
-}
-#continua-header{
-    background-color: #161616;
-}
-#header-h1{
-    color: white; 
-    font-family: Noto Sans, sans-serif; 
-    font-size: 150px;
-}
-#header-h2{
-    color: white;
-    font-family: Noto Sans, sans-serif;
-    font-size: 70px;
-}
-.span-verde{
-    color: #34AD29;
-}
-.span-roxo{
-    color: #481589;
-}
-#transicao-main{
-    background-image: linear-gradient(#929292, #c0c0c0, rgb(255, 255, 255));
-}
-
-/* CADASTRO CSS */
-
-.cadastro-corpo{
-    background-image:linear-gradient(#050505, #0c0c0c, #050505);
-}
-section{
+body {
+    background-color: #282c34;
+    color: #fff;
+    font-family: sans-serif;
+  }
+  .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .header {
+    display: flex;
     align-items: center;
-    width: 100%;
-    height: 100vh;
-    flex-flow: column;
-}
-.form-group {
-    position: relative;
-    margin: 12px, 0;
-}
-.form-group input {
-    padding: 8px 10px;
+  }
+  .user {
+    margin-left: 20px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .task {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .task-icon {
+    margin-right: 10px;
+  }
+  .task-title {
+    font-weight: bold;
+  }
+  .add-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .notes {
+    margin-top: 20px;
+  }
+  .notes-header {
     font-size: 18px;
-    border-radius: 5px;
-    border: #acacac solid 2px;
-    background-color: transparent;
-    color: #eee;
-    transition: 0.15s all ease;
-}
-.form-group input:focus {
-    border-color: #eee;
-}
-.form-group input::placeholder {
-    color: transparent;
-}
-.form-group .form-label {
-    position: absolute;
-    top: 9px;
-    left: 0;
+    font-weight: bold;
+  }
+  .notes-content {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 100px;
+    resize: vertical;
+  }
+  .calendar {
+    margin-top: 20px;
+  }
+  .calendar-header {
     font-size: 18px;
-    padding: 0 10px;
-    color: #acacac;
-    pointer-events: none;
-    transition: 0,15s all ease;
-}
-.form-group input:focus + .form-label,
-.form-group input:not(:placeholder-shown) +
-.form-label {
-    transform: translate(5px, -22px);
-    background-color: #0c0c0c;
-    font-size: 14px;
-    color: #acacac;
-}
-h4 {
-    font-size: 16px;
-    font-family: Noto Sans, sans-serif;
-}
-#h3-cadastro {
-    font-size: 25px;
-    font-family: Noto Sans, sans-serif;
-    color: #481589;
-}
-#link-cadastro-inicio {
-    text-decoration: none;
-    color: #acacac;
-}
-#link-cadastro-inicio:active {
-    text-decoration: none;
-}
-#link-cadastro-inicio:hover {
-    text-decoration: none;
-}
+    font-weight: bold;
+  }
+  .calendar-day {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .calendar-title {
+    font-weight: bold;
+  }
+  .progress {
+    margin-top: 20px;
+  }
+  .progress-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .progress-chart {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 200px;
+  }
+  .progress-category {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .progress-category-title {
+    font-weight: bold;
+  }
