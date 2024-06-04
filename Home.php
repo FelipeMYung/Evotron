@@ -1,93 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Organização Pessoal</title>
+  <style>
+    body {
+      background-color: #282c34;
+      color: #fff;
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .section {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .user {
+      margin-left: 20px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .task-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .task {
+      background-color: #444;
+      padding: 10px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+    }
+    .task-icon {
+      margin-right: 10px;
+    }
+    .task-title {
+      font-weight: bold;
+    }
+    .add-button {
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .notes {
+      margin-top: 20px;
+    }
+    .notes-header {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .notes-content {
+      background-color: #555;
+      padding: 10px;
+      border-radius: 4px;
+      min-height: 100px;
+      resize: vertical;
+    }
+    .calendar {
+      margin-top: 20px;
+    }
+    .calendar-header {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .calendar-day {
+      background-color: #444;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .calendar-title {
+      font-weight: bold;
+    }
+    .progress {
+      margin-top: 20px;
+    }
+    .progress-header {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .progress-chart {
+      background-color: #555;
+      padding: 10px;
+      border-radius: 4px;
+      min-height: 200px;
+    }
+    .progress-category {
+      background-color: #444;
+      padding: 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .progress-category-title {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="" alt="logo" srcset="">
-        <div id="Menu_Header">
-            <h3><a href="#">Login</a></h3>
-            <h3><a href="#">Sobre</a></h3>
-            <h3><a href="#">Contato</a></h3>
+  <div class="container">
+    <div class="section">
+      <div class="header">
+        <div>
+          <div class="icon"></div>
         </div>
-    </header>
-    <main>
-        <h1>Olá Usuário!</h1>
-        <div id="principal">
-            <div id="tela1">
-                <div id="organizacao">
-                    <h2>Organização: </h2>
-                    <div id="tarefas">
-                        <div id="tarefas_nav">
-                            <h4>Tarefas: </h4>
-                            <button><p>Todos</p></button>
-                            <button><p>Prioridade</p></button>
-                            <button><p>Sla</p></button>
-                        </div>
-                        <ul>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <li>tarefa</li>
-                            <p></p>
-                            <button><p>Mais</p></button>
-                        </ul>
-                    </div>
-                    <div id="anotacoes">
-                        <input type="text">
-                        <p>Anotações de hoje: X</p>
-                        <button><p>Mais</p></button>
-                    </div>
-                    <h4>Dias ativos: X</h4>
-                    <img src="#" alt="grafico">
-                </div>
-            </div>
-            <div id="tela2">
-                <div id="Agenda">
-                    <h2>Agenda: </h2>
-                    <div id="compromissos">
-                        <h4>Hoje: </h4>
-                        <button><p>Mais</p></button>
-                        <p>Dentista - 15:00</p>
-                        <p>Reunião - 18:00</p>
-                        <h4>Próximos dias: </h4>
-                        <p>Alistamento 18/06 - 13:00</p>
-                        <p>Trabalho final 10/11 - 23:59</p>
-                    </div>
-                    <div id="calendario">
-                        <img src="#" alt="calendario">
-                    </div>
-                </div>
-                <div id="Progresso">
-                    <h2>Progresso: </h2>
-                    <button><p>Mais</p></button>
-                    <div id="progresso_nav">
-                        <button><p>Físico</p></button>
-                        <button><p>Emocional</p></button>
-                        <button><p>Inteligência</p></button>
-                    </div>]
-                    <div id="progresso_atual">
-                        <h4>Hoje: </h4>
-                        <p>Peso: </p>
-                        <p>Altura: </p>
-                        <p>Tempo: </p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
+        <div class="user">
+          <p>Olá, "Usuário"</p>
+          <p>04/05/2024</p>
         </div>
-    </main>
+      </div>
+      <div class="title">Organização:</div>
+      <div class="button-group">
+        <button class="button">Todos</button>
+        <button class="button">Rotina</button>
+        <button class="button">Novos</button>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-book-reader"></i>
+          </div>
+          <div class="task-title">Ler</div>
+          <button class="add-button">+</button>
+        </div>
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-broom"></i>
+          </div>
+          <div class="task-title">Aspirar quarto</div>
+          <button class="add-button">+</button>
+        </div>
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="task-title">Trabalho CN</div>
+          <button class="add-button">+</button>
+        </div>
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-pills"></i>
+          </div>
+          <div class="task-title">Tomar remédio</div>
+          <button class="add-button">+</button>
+        </div>
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-pencil-alt"></i>
+          </div>
+          <div class="task-title">Exercícios</div>
+          <button class="add-button">+</button>
+        </div>
+        <div class="task">
+          <div class="task-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <div class="task-title">Questões concurso</div>
+          <button class="add-button">+</button>
+        </div>
+      </div>
+      <div class="notes">
+        <div class="notes-header">Anotações:</div>
+        <textarea class="notes-content"></textarea>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">Agenda:</div>
+      <div class="calendar">
+        <div class="calendar-header">Hoje:</div>
+        <div class="calendar-day">
+          <div class="calendar-title">Dentista</div>
+          <div class="calendar-time">16:00</div>
+        </div>
+        <div class="calendar-day">
+          <div class="calendar-title">Reunião</div>
+          <div class="calendar-time">18:00</div>
+        </div>
+        <button class="add-button">+</button>
+      </div>
+      <div class="calendar">
+        <div class="calendar-header">Próximos dias:</div>
+        <div class="calendar-day">
+          <div class="calendar-title">Alistamento</div>
+          <div class="calendar-time">16/05 - 13:00</div>
+        </div>
+        <div class="calendar-day">
+          <div class="calendar-title">Entrega trabalho</div>
+          <div class="calendar-time">20/06 - 18:00</div>
+        </div>
+        <button class="add-button">+</button>
+      </div>
+      <div class="progress">
+        <div class="progress-header">Seu progresso:</div>
+        <div class="progress-chart">
+          <div class="progress-category">
+            <div class="progress-category-title">Físico</div>
+          </div>
+          <div class="progress-category">
+            <div class="progress-category-title">Mental</div>
+          </div>
+          <div class="progress-category">
+            <div class="progress-category-title">Estudos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
