@@ -4,158 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <style>
-        body {
-            background-color: #2b002b;
-            color: white;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #d9d9d9;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: black;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo svg {
-            width: 30px;
-            height: 30px;
-            fill: red;
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-left: 20px;
-        }
-
-        nav a {
-            color: black;
-            text-decoration: none;
-        }
-
-        main {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-            flex: 1;
-        }
-
-        .container {
-            background-color: #3e003e;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .organization-container {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .tasks-container, .tasks-container2 {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .task {
-            background-color: green;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            color: black;
-        }
-
-        .task.completed {
-            background-color: #212529;
-        }
-
-        .task-icon {
-            margin-right: 5px;
-        }
-
-        .task-text {
-            flex-grow: 1;
-        }
-
-        .task-checkbox {
-            display: none;
-        }
-
-        .notes-container {
-            height: 100px;
-            background-color: #495057;
-            padding: 10px;
-            border-radius: 4px;
-            resize: vertical;
-        }
-
-        .sidebar-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .schedule-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .schedule-item, .schedule-item2 {
-            background-color: #3e003e;
-            padding: 10px;
-            border-radius: 4px;
-            color: lightblue;
-        }
-
-        .schedule-item-title {
-            font-weight: bold;
-        }
-
-        .progress-container {
-            background-color: #3e003e;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #ced4da;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar-filled {
-            height: 100%;
-            background-color: #28a745;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -223,7 +72,8 @@
                 </div>
             </div>
             <div class="notes-container">
-                
+                <input type="text" id="main_notes">
+                <button id="note_button"><p>Enviar</p></button>
             </div>
         </div>
 
