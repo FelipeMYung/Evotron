@@ -13,7 +13,7 @@
   </head>
   <body>
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">E<span class="span-verde">V</span>OTRON</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
           <a class="nav-link" href="#">Sobre</a>
         </li>
       </ul>
-      <a href="cadastro.html"><button class="btn btn-success btn-lg">Cadastre-se</button></a>
+      <a href="cadastro.php"><button class="btn btn-success btn-lg">Cadastre-se</button></a>
     </div>
   </nav>
   
