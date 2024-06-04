@@ -13,6 +13,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
+            height: 100vh;
         }
 
         header {
@@ -53,20 +54,22 @@
         }
 
         main {
-            padding: 20px;
             display: flex;
+            padding: 20px;
             gap: 20px;
+            flex: 1;
         }
 
         .container {
             background-color: #3e003e;
             padding: 20px;
             border-radius: 8px;
-            flex: 1;
         }
 
-        h2 {
-            margin-bottom: 10px;
+        .organization-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
         }
 
         .tasks-container, .tasks-container2 {
@@ -76,7 +79,7 @@
             flex-wrap: wrap;
         }
 
-        .task, .task2 {
+        .task {
             background-color: green;
             padding: 10px;
             border-radius: 4px;
@@ -108,6 +111,13 @@
             padding: 10px;
             border-radius: 4px;
             resize: vertical;
+        }
+
+        .sidebar-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .schedule-container {
@@ -151,7 +161,7 @@
     <header>
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
             </svg>
             <span>Olá, "Usuário"</span>
         </div>
@@ -165,7 +175,7 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="organization-container container">
             <h2>Organização</h2>
             <div class="tasks-container">
                 <div class="task">
@@ -217,39 +227,40 @@
             </div>
         </div>
 
-        <div class="container schedule-container">
-            <h2>Agenda</h2>
-            <div class="schedule-item">
-                <h3 class="schedule-item-title">Hoje:</h3>
-                <span>Dentista - 16:00</span><br>
-                <span>Reunião - 18:00</span>
-            </div>
-            <div class="schedule-item2">
-                <h3 class="schedule-item-title">Próximos dias:</h3>
-                <span>Alistamento 16/05 - 13:00</span><br>
-                <span>Entrega trabalho 20/06 - 18:00</span>
-            </div>
-        </div>
-
-        <div class="container progress-container">
-            <h2>Seu progresso</h2>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-bar-filled" style="width: 75%"></div>
+        <div class="sidebar-container">
+            <div class="container schedule-container">
+                <h2>Agenda</h2>
+                <div class="schedule-item">
+                    <h3 class="schedule-item-title">Hoje:</h3>
+                    <span>Dentista - 16:00</span><br>
+                    <span>Reunião - 18:00</span>
                 </div>
-                <span>Físico</span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-bar-filled" style="width: 50%"></div>
+                <div class="schedule-item2">
+                    <h3 class="schedule-item-title">Próximos dias:</h3>
+                    <span>Alistamento 16/05 - 13:00</span><br>
+                    <span>Entrega trabalho 20/06 - 18:00</span>
                 </div>
-                <span>Mental</span>
             </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-bar-filled" style="width: 90%"></div>
+            <div class="container progress-container">
+                <h2>Seu progresso</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" style="width: 75%"></div>
+                    </div>
+                    <span>Físico</span>
                 </div>
-                <span>Estudos</span>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" style="width: 50%"></div>
+                    </div>
+                    <span>Mental</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" style="width: 90%"></div>
+                    </div>
+                    <span>Estudos</span>
+                </div>
             </div>
         </div>
     </main>
