@@ -85,6 +85,15 @@ main {
   align-items: center;
   color: black;
 }
+.task-add{
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: black;
+}
 
 .task.completed {
   background-color: #212529;
@@ -100,6 +109,15 @@ main {
 
 .task-checkbox {
   display: none;
+}
+.filter {
+  background-color: rgb(113, 92, 92);
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
 .notes-container {

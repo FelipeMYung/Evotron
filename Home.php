@@ -26,37 +26,45 @@
     <main>
         <div class="organization-container container">
             <h2>Organização</h2>
+            <h3>Tarefas: </h3>
             <div class="tasks-container">
-                <div class="task">
+                <div class="filter">
                     <span class="task-text">Todos</span>
                 </div>
-                <div class="task">
+                <div class="filter">
                     <span class="task-text">Rotina</span>
                 </div>
-                <div class="task">
+                <div class="filter">
                     <span class="task-text">Novos</span>
                 </div>
             </div>
             <div class="tasks-container2">
+                <div class="task-add">
+                    <span class="task-text">+</span>
+                </div>
                 <div class="task">
                     <input type="checkbox" class="task-checkbox" id="task1">
                     <label for="task1" class="task-icon"></label>
                     <span class="task-text">Ler</span>
+                    <input type="checkbox" name="" id="">
                 </div>
                 <div class="task">
                     <input type="checkbox" class="task-checkbox" id="task2">
                     <label for="task2" class="task-icon"></label>
                     <span class="task-text">Aspirar quarto</span>
+                    <input type="checkbox" name="" id="">
                 </div>
                 <div class="task">
                     <input type="checkbox" class="task-checkbox" id="task3">
                     <label for="task3" class="task-icon"></label>
                     <span class="task-text">Trabalho CN</span>
+                    <input type="checkbox" name="" id="">
                 </div>
                 <div class="task">
                     <input type="checkbox" class="task-checkbox" id="task4">
                     <label for="task4" class="task-icon"></label>
                     <span class="task-text">Tomar remédio</span>
+                    <input type="checkbox" name="" id="">
                 </div>
             </div>
             <div class="tasks-container2">
@@ -64,11 +72,13 @@
                     <input type="checkbox" class="task-checkbox" id="task5">
                     <label for="task5" class="task-icon"></label>
                     <span class="task-text">Exercícios</span>
+                    <input type="checkbox" name="" id="">
                 </div>
                 <div class="task">
                     <input type="checkbox" class="task-checkbox" id="task6">
                     <label for="task6" class="task-icon"></label>
                     <span class="task-text">Questões concurso</span>
+                    <input type="checkbox" name="" id="">
                 </div>
             </div>
             <div class="notes-container">
