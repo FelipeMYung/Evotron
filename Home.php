@@ -28,15 +28,15 @@
             <h2>Organização</h2>
             <h3>Tarefas: </h3>
             <div class="tasks-container">
-                <div class="filter">
+                <button class="filter">
                     <span class="task-text">Todos</span>
-                </div>
-                <div class="filter">
+            </button>
+            <button class="filter">
                     <span class="task-text">Rotina</span>
-                </div>
-                <div class="filter">
+            </button>
+            <button class="filter">
                     <span class="task-text">Novos</span>
-                </div>
+            </button>
             </div>
             <div class="tasks-container2">
                 <div class="task-add">
