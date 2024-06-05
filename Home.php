@@ -22,64 +22,29 @@
             </ul>
         </nav>
     </header>
-
     <main>
+        <div class="popup-background" id="popup-background">
+            <div class="popup-main">
+                <span id="popup-close">x</span>
+                <h1>Adicionar Tarefa: </h1>
+            </div>
+        </div>
         <div class="organization-container container">
             <h2>Organização</h2>
             <h3>Tarefas: </h3>
             <div class="tasks-container">
                 <button class="filter">
                     <span class="task-text">Todos</span>
-            </button>
-            <button class="filter">
+                </button>
+                <button class="filter">
                     <span class="task-text">Rotina</span>
-            </button>
-            <button class="filter">
+                </button>
+                <button class="filter">
                     <span class="task-text">Novos</span>
-            </button>
+                </button>
             </div>
             <div class="tasks-container2">
-                <div class="task-add">
-                    <span class="task-text">+</span>
-                </div>
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task1">
-                    <label for="task1" class="task-icon"></label>
-                    <span class="task-text">Ler</span>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task2">
-                    <label for="task2" class="task-icon"></label>
-                    <span class="task-text">Aspirar quarto</span>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task3">
-                    <label for="task3" class="task-icon"></label>
-                    <span class="task-text">Trabalho CN</span>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task4">
-                    <label for="task4" class="task-icon"></label>
-                    <span class="task-text">Tomar remédio</span>
-                    <input type="checkbox" name="" id="">
-                </div>
-            </div>
-            <div class="tasks-container2">
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task5">
-                    <label for="task5" class="task-icon"></label>
-                    <span class="task-text">Exercícios</span>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="task">
-                    <input type="checkbox" class="task-checkbox" id="task6">
-                    <label for="task6" class="task-icon"></label>
-                    <span class="task-text">Questões concurso</span>
-                    <input type="checkbox" name="" id="">
-                </div>
+                <button id="add-task-button">Adicionar Tarefa</button>
             </div>
             <div class="notes-container">
                 <input type="text" id="main_notes">
@@ -123,6 +88,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> 
+    <script src="script.js"></script>
 </body>
 </html>
