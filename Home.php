@@ -27,7 +27,6 @@
             <div class="popup-main">
                 <span id="popup-close">x</span>
                 <h1>Adicionar Tarefa: </h1>
-                <!-- Adicione seu formulário ou conteúdo aqui -->
             </div>
         </div>
         <div class="organization-container container">
@@ -45,10 +44,7 @@
                 </button>
             </div>
             <div class="tasks-container2">
-                <div class="task-add">
-                    <button id="add-task-button">Adicionar Tarefa</button>
-                </div>
-                <!-- Tarefas -->
+                <button id="add-task-button">Adicionar Tarefa</button>
             </div>
             <div class="notes-container">
                 <input type="text" id="main_notes">
