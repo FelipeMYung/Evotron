@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
         <div class="popup-background" id="popup-background">
             <div class="popup-main">
                 <span id="popup-close">x</span>
-                <h1>Adicionar Tarefa: </h1>
+                <h1 style="color: black;"> Adicionar Tarefa: </h1>
                 <form method="post" id="Inputs">
                     <label for="item">Novo Item:</label>
                     <input type="text" id="item" name="novoItem">
