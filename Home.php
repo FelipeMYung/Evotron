@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
                     if (isset($_COOKIE[$cookieName])) {
                         $currentItems = unserialize($_COOKIE[$cookieName]);
                         foreach ($currentItems as $index => $item) {
-                        echo "<li><div id='lista'>$item <form method='post'><input type='hidden' name='deleteItem' value='$index'><input type='submit' value='Excluir'></form></div></li>";
+                        echo "<li><div class='task'>$item <form method='post'><input type='hidden' name='deleteItem' value='$index'><input type='checkbox' value='Excluir'></form></div></li>";
                 }}
                 ?>
             </ul>
