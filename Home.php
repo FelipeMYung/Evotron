@@ -26,7 +26,7 @@
         <div class="popup-background" id="popup-background">
             <div class="popup-main">
                 <span id="popup-close">x</span>
-                <h1>Adicionar Tarefa: </h1>
+                <h1 style="color: black;"> Adicionar Tarefa: </h1>
             </div>
         </div>
         <div class="organization-container container">
