@@ -40,6 +40,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
     header("Location: Home.php"); // Redireciona após adicionar o evento
     exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteEvent'])) {
+    $eventIndex = $_POST['deleteEvent'];
+
+    if (isset($_COOKIE["agendaList"])) {
+        $currentEvents = unserialize($_COOKIE["agendaList"]);
+        if (isset($currentEvents[$eventIndex])) {
+            unset($currentEvents[$eventIndex]);
+            $cookieValue = serialize($currentEvents);
+            setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Atualiza o cookie
+        }
+    }
+
+    header("Location: Home.php"); // Redireciona após excluir o evento
+    exit(); // Termina a execução para evitar operações repetidas
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !empty($_POST['novoEvento']) && isset($_POST['diaEvento']) && !empty($_POST['diaEvento']) && isset($_POST['horaEvento']) && !empty($_POST['horaEvento'])) {
+    $novoEvento = $_POST['novoEvento'];
+    $diaEvento = $_POST['diaEvento'];
+    $horaEvento = $_POST['horaEvento'];
+
+    $currentEvents = isset($_COOKIE["agendaList"]) ? unserialize($_COOKIE["agendaList"]) : array();
+    $currentEvents[] = array("evento" => $novoEvento, "dia" => $diaEvento, "hora" => $horaEvento);
+
+    $cookieValue = serialize($currentEvents);
+    setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
+    header("Location: Home.php"); // Redireciona após adicionar o evento
+    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -115,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
                     if (isset($_COOKIE[$cookieName])) {
                         $currentItems = unserialize($_COOKIE[$cookieName]);
                         foreach ($currentItems as $index => $item) {
-                        echo "<li><div class='task'>$item <form method='post'><input type='hidden' name='deleteItem' value='$index'><input type='checkbox' value='Excluir'></form></div></li>";
+                            echo "<li>{$evento} - Data: {$dia} - Hora: {$hora} <form method='post'><input type='hidden' name='deleteEvent' value='{$index}'><input type='submit' value='Deletar'></form></li>";
                 }}
                 ?>
             </ul>
@@ -130,16 +160,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
             <div class="container schedule-container">
                 <h2>Agenda</h2>
                 <button id="add-event-button">Adicionar Evento</button>
-                <div class="schedule-item">
-                    <h3 class="schedule-item-title">Hoje:</h3>
-                    <span>Dentista - 16:00</span><br>
-                    <span>Reunião - 18:00</span>
-                </div>
-                <div class="schedule-item2">
-                    <h3 class="schedule-item-title">Próximos dias:</h3>
-                    <span>Alistamento 16/05 - 13:00</span><br>
-                    <span>Entrega trabalho 20/06 - 18:00</span>
-                </div>
+                <?php
+                    if (isset($_COOKIE["agendaList"])) {
+                        $currentEvents = unserialize($_COOKIE["agendaList"]);
+                        echo "<ul>";
+                        foreach ($currentEvents as $index => $event) {
+                            $evento = $event['evento'];
+                            $data = isset($event['data']) ? $event['data'] : ""; // Verifica se 'data' está definido
+                            $dia = isset($event['dia']) ? $event['dia'] : ""; // Verifica se 'dia' está definido
+                            $hora = $event['hora'];
+                            echo "<li>{$evento} - Data: {$data}, Dia: {$dia}, Hora: {$hora} <form method='post'><input type='hidden' name='deleteEvent' value='{$index}'><input type='submit' value='Deletar'></form></li>";
+                        }
+                        echo "</ul>";
+                    } else {
+                        echo "<p>Nenhum evento na agenda.</p>";
+                    }
+                ?>
             </div>
             <div class="container progress-container">
                 <h2>Seu progresso</h2>
