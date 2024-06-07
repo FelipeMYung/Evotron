@@ -85,6 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
                 <form method="post" id="AgendaInputs">
                     <label for="evento">Novo Evento:</label>
                     <input type="text" id="evento" name="novoEvento">
+                    <label for="dia">Dia:</label>
+                    <input type="date" id="dia" name="diaEvento">
                     <label for="hora">Hora:</label>
                     <input type="time" id="hora" name="horaEvento">
                     <input type="submit" value="Adicionar">
