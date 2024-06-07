@@ -1,3 +1,34 @@
+<?php
+$cookieName = "itemList"; // Defina o nome do cookie aqui
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoItem']) && !empty($_POST['novoItem'])) {
+    $novoItem = $_POST['novoItem'];
+
+    $currentItems = isset($_COOKIE[$cookieName]) ? unserialize($_COOKIE[$cookieName]) : array();
+    $currentItems[] = $novoItem;
+
+    $cookieValue = serialize($currentItems);
+    setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
+    header("Location: Home.php"); // Redireciona após adicionar o item
+    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
+    $itemIndex = $_POST['deleteItem'];
+
+    if (isset($_COOKIE[$cookieName])) {
+        $currentItems = unserialize($_COOKIE[$cookieName]);
+        if (isset($currentItems[$itemIndex])) {
+            unset($currentItems[$itemIndex]);
+            $cookieValue = serialize($currentItems);
+            setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // Atualiza o cookie
+        }
+    }
+
+    header("Location: Home.php"); // Redireciona após excluir o item
+    exit(); // Termina a execução para evitar operações repetidas
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,6 +58,11 @@
             <div class="popup-main">
                 <span id="popup-close">x</span>
                 <h1>Adicionar Tarefa: </h1>
+                <form method="post" id="Inputs">
+                    <label for="item">Novo Item:</label>
+                    <input type="text" id="item" name="novoItem">
+                    <input type="submit" value="Adicionar">
+                </form>
             </div>
         </div>
         <div class="organization-container container">
@@ -46,6 +82,16 @@
             <div class="tasks-container2">
                 <button id="add-task-button">Adicionar Tarefa</button>
             </div>
+            <ul>
+                <?php
+                    if (isset($_COOKIE[$cookieName])) {
+                        $currentItems = unserialize($_COOKIE[$cookieName]);
+                        foreach ($currentItems as $index => $item) {
+                        echo "<li><div id='lista'>$item <form method='post'><input type='hidden' name='deleteItem' value='$index'><input type='submit' value='Excluir'></form></div></li>";
+                }}
+                ?>
+            </ul>
+
             <div class="notes-container">
                 <input type="text" id="main_notes">
                 <button id="note_button"><p>Enviar</p></button>
