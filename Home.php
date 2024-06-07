@@ -28,6 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
     header("Location: Home.php"); // Redireciona após excluir o item
     exit(); // Termina a execução para evitar operações repetidas
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !empty($_POST['novoEvento']) && isset($_POST['horaEvento']) && !empty($_POST['horaEvento'])) {
+    $novoEvento = $_POST['novoEvento'];
+    $horaEvento = $_POST['horaEvento'];
+
+    $currentEvents = isset($_COOKIE["agendaList"]) ? unserialize($_COOKIE["agendaList"]) : array();
+    $currentEvents[] = array("evento" => $novoEvento, "hora" => $horaEvento);
+
+    $cookieValue = serialize($currentEvents);
+    setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
+    header("Location: Home.php"); // Redireciona após adicionar o evento
+    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -61,6 +74,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
                 <form method="post" id="Inputs">
                     <label for="item">Novo Item:</label>
                     <input type="text" id="item" name="novoItem">
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+        </div>
+        <div class="popup-background" id="agenda-popup-background">
+            <div class="popup-main">
+                <span id="agenda-popup-close">x</span>
+                <h1 style="color: black;"> Adicionar Evento na Agenda: </h1>
+                <form method="post" id="AgendaInputs">
+                    <label for="evento">Novo Evento:</label>
+                    <input type="text" id="evento" name="novoEvento">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="horaEvento">
                     <input type="submit" value="Adicionar">
                 </form>
             </div>
@@ -101,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
         <div class="sidebar-container">
             <div class="container schedule-container">
                 <h2>Agenda</h2>
+                <button id="add-event-button">Adicionar Evento</button>
                 <div class="schedule-item">
                     <h3 class="schedule-item-title">Hoje:</h3>
                     <span>Dentista - 16:00</span><br>
