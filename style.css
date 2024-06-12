@@ -73,11 +73,12 @@ main {
 .popup-main {
   width: 70%;
   max-width: 500px;
-  background-color: #fff;
+  background-color: #5a4a4a;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.64);
   position: relative;
+  color: black;
 }
 
 #popup-close {
@@ -197,7 +198,19 @@ main {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
+.filter:hover{
+  background-color: #43df75;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 .notes-container {
   display: flex;
   gap: 10px;
