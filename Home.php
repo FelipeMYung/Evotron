@@ -1,77 +1,3 @@
-<?php
-$cookieName = "itemList"; // Defina o nome do cookie aqui
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoItem']) && !empty($_POST['novoItem'])) {
-    $novoItem = $_POST['novoItem'];
-
-    $currentItems = isset($_COOKIE[$cookieName]) ? unserialize($_COOKIE[$cookieName]) : array();
-    $currentItems[] = $novoItem;
-
-    $cookieValue = serialize($currentItems);
-    setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
-    header("Location: Home.php"); // Redireciona após adicionar o item
-    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
-    $itemIndex = $_POST['deleteItem'];
-
-    if (isset($_COOKIE[$cookieName])) {
-        $currentItems = unserialize($_COOKIE[$cookieName]);
-        if (isset($currentItems[$itemIndex])) {
-            unset($currentItems[$itemIndex]);
-            $cookieValue = serialize($currentItems);
-            setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // Atualiza o cookie
-        }
-    }
-
-    header("Location: Home.php"); // Redireciona após excluir o item
-    exit(); // Termina a execução para evitar operações repetidas
-}
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !empty($_POST['novoEvento']) && isset($_POST['horaEvento']) && !empty($_POST['horaEvento'])) {
-    $novoEvento = $_POST['novoEvento'];
-    $horaEvento = $_POST['horaEvento'];
-
-    $currentEvents = isset($_COOKIE["agendaList"]) ? unserialize($_COOKIE["agendaList"]) : array();
-    $currentEvents[] = array("evento" => $novoEvento, "hora" => $horaEvento);
-
-    $cookieValue = serialize($currentEvents);
-    setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
-    header("Location: Home.php"); // Redireciona após adicionar o evento
-    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
-}
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteEvent'])) {
-    $eventIndex = $_POST['deleteEvent'];
-
-    if (isset($_COOKIE["agendaList"])) {
-        $currentEvents = unserialize($_COOKIE["agendaList"]);
-        if (isset($currentEvents[$eventIndex])) {
-            unset($currentEvents[$eventIndex]);
-            $cookieValue = serialize($currentEvents);
-            setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Atualiza o cookie
-        }
-    }
-
-    header("Location: Home.php"); // Redireciona após excluir o evento
-    exit(); // Termina a execução para evitar operações repetidas
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !empty($_POST['novoEvento']) && isset($_POST['diaEvento']) && !empty($_POST['diaEvento']) && isset($_POST['horaEvento']) && !empty($_POST['horaEvento'])) {
-    $novoEvento = $_POST['novoEvento'];
-    $diaEvento = $_POST['diaEvento'];
-    $horaEvento = $_POST['horaEvento'];
-
-    $currentEvents = isset($_COOKIE["agendaList"]) ? unserialize($_COOKIE["agendaList"]) : array();
-    $currentEvents[] = array("evento" => $novoEvento, "dia" => $diaEvento, "hora" => $horaEvento);
-
-    $cookieValue = serialize($currentEvents);
-    setcookie("agendaList", $cookieValue, time() + (86400 * 30), "/"); // Define o cookie com validade de 30 dias
-    header("Location: Home.php"); // Redireciona após adicionar o evento
-    exit(); // Termina a execução para evitar adicionar novamente ao recarregar a página
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -141,13 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
                 <button id="add-task-button">Adicionar Tarefa</button>
             </div>
             <ul>
-                <?php
-                    if (isset($_COOKIE[$cookieName])) {
-                        $currentItems = unserialize($_COOKIE[$cookieName]);
-                        foreach ($currentItems as $index => $item) {
-                            echo "<li>{$evento} - Data: {$dia} - Hora: {$hora} <form method='post'><input type='hidden' name='deleteEvent' value='{$index}'><input type='submit' value='Deletar'></form></li>";
-                }}
-                ?>
             </ul>
 
             <div class="notes-container">
@@ -160,22 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
             <div class="container schedule-container">
                 <h2>Agenda</h2>
                 <button id="add-event-button">Adicionar Evento</button>
-                <?php
-                    if (isset($_COOKIE["agendaList"])) {
-                        $currentEvents = unserialize($_COOKIE["agendaList"]);
-                        echo "<ul>";
-                        foreach ($currentEvents as $index => $event) {
-                            $evento = $event['evento'];
-                            $data = isset($event['data']) ? $event['data'] : ""; // Verifica se 'data' está definido
-                            $dia = isset($event['dia']) ? $event['dia'] : ""; // Verifica se 'dia' está definido
-                            $hora = $event['hora'];
-                            echo "<li>{$evento} - Data: {$data}, Dia: {$dia}, Hora: {$hora} <form method='post'><input type='hidden' name='deleteEvent' value='{$index}'><input type='submit' value='Deletar'></form></li>";
-                        }
-                        echo "</ul>";
-                    } else {
-                        echo "<p>Nenhum evento na agenda.</p>";
-                    }
-                ?>
             </div>
             <div class="container progress-container">
                 <h2>Seu progresso</h2>
