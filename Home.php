@@ -141,13 +141,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['novoEvento']) && !emp
                 <button id="add-task-button">Adicionar Tarefa</button>
             </div>
             <ul>
-                <?php
-                    if (isset($_COOKIE[$cookieName])) {
-                        $currentItems = unserialize($_COOKIE[$cookieName]);
-                        foreach ($currentItems as $index => $item) {
-                            echo "<li>{$evento} - Data: {$dia} - Hora: {$hora} <form method='post'><input type='hidden' name='deleteEvent' value='{$index}'><input type='submit' value='Deletar'></form></li>";
-                }}
-                ?>
+            <?php
+                if (isset($_COOKIE[$cookieName])) {
+                $currentItems = unserialize($_COOKIE[$cookieName]);
+                foreach ($currentItems as $index => $item) {
+                    $evento = $item['evento'];
+                    $dia = $item['dia'];
+                    $hora = $item['hora'];
+                    echo "<li>$evento - Data: $dia - Hora: $hora <form method='post'><input type='hidden' name='deleteEvent' value='$index'><input type='submit' value='Deletar'></form></li>";
+                    }
+                }
+            ?>
             </ul>
 
             <div class="notes-container">
