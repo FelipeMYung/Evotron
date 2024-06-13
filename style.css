@@ -140,6 +140,9 @@ main {
   gap: 10px;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  border: black 1px solid;
+  padding: 10px;
+  justify-content: center;
 }
 
 .task {
@@ -186,7 +189,7 @@ main {
   display: none;
 }
 .filter {
-  background-color: #808080;
+  background-color: #9e9393;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -197,20 +200,15 @@ main {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
-.filter:hover{
+
+.filter:hover {
   background-color: #43df75;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
 }
+
 .notes-container {
   display: flex;
   gap: 10px;
