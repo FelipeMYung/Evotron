@@ -34,18 +34,6 @@ function buscarTarefas() {
     return $tarefas;
 }
 
-// Função para adicionar uma nova tarefa no banco de dados
-function adicionarTarefa($titulo, $descricao, $data_vencimento) {
-    global $conn;
-    $sql = "INSERT INTO tasks (title, description, due_date) VALUES ('$titulo', '$descricao', '$data_vencimento')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Nova tarefa adicionada com sucesso!";
-    } else {
-        echo "Erro ao adicionar tarefa: " . $conn->error;
-    }
-}
-
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se todos os campos estão preenchidos
@@ -55,8 +43,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $descricao = $_POST["descricao"];
         $data_vencimento = $_POST["data_vencimento"];
 
-        // Adiciona a tarefa no banco de dados
-        adicionarTarefa($titulo, $descricao, $data_vencimento);
+        // Verifica se a tarefa já existe no banco de dados
+        $sql_check = "SELECT * FROM tasks WHERE title='$titulo'";
+        $result_check = $conn->query($sql_check);
+        if ($result_check->num_rows == 0) {
+            // Adiciona a tarefa no banco de dados
+            $sql_insert = "INSERT INTO tasks (title, description, due_date) VALUES ('$titulo', '$descricao', '$data_vencimento')";
+            if ($conn->query($sql_insert) === TRUE) {
+                echo "Nova tarefa adicionada com sucesso!";
+            } else {
+                echo "Erro ao adicionar tarefa: " . $conn->error;
+            }
+        } else {
+            echo "A tarefa já existe.";
+        }
     } else {
         echo "Por favor, preencha todos os campos do formulário.";
     }
