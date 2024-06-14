@@ -13,3 +13,9 @@ CREATE TABLE IF NOT EXISTS tasks (
     is_completed BOOLEAN DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE IF NOT EXISTS notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    note VARCHAR(400),
+    creation_date DATE
+);

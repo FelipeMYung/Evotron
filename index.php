@@ -38,6 +38,21 @@
                 </form>
             </div>
         </div>
+        <div class="popup-background" id="agenda-popup-background">
+            <div class="popup-main">
+                <span id="agenda-popup-close">x</span>
+                <h1 style="color: black;"> Adicionar Evento na Agenda: </h1>
+                <form method="post" id="AgendaInputs">
+                    <label for="evento">Novo Evento:</label>
+                    <input type="text" id="evento" name="novoEvento">
+                    <label for="dia">Dia:</label>
+                    <input type="date" id="dia" name="diaEvento">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="horaEvento">
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+        </div>
         <div class="organization-container container">
             <h2>ORGANIZAÇÃO</h2>
             <div class="tasks-container">
@@ -77,6 +92,44 @@
             <div class="container schedule-container">
                 <h2>AGENDA</h2>
                 <button id="add-event-button">Adicionar Evento</button>
+                <ul>
+        <?php
+        // Função para buscar todos os eventos na tabela de notas
+        function buscarEventos() {
+            global $conn; // Certifique-se de que $conn é uma conexão válida e global
+
+            // Verifica se a conexão com o banco de dados foi estabelecida corretamente
+            if (!$conn) {
+                die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
+            }
+
+            $sql = "SELECT title, note, creation_date FROM notes";
+            $result = $conn->query($sql);
+
+            if ($result === false) {
+                die("Erro na consulta SQL: " . $conn->error);
+            }
+
+            $eventos = array();
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $eventos[] = $row;
+                }
+            }
+
+            return $eventos;
+        }
+
+        // Busca todos os eventos do banco de dados
+        $eventos = buscarEventos();
+
+        // Exibe os eventos
+        foreach ($eventos as $evento) {
+            echo "<li>{$evento['title']} - {$evento['note']} - Data de Criação: {$evento['creation_date']}</li>";
+        }
+        ?>
+    </ul>
             </div>
             <div class="container progress-container">
                 <h2>PROGRESSO</h2>
