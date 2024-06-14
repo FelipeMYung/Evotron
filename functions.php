@@ -33,4 +33,32 @@ function buscarTarefas() {
 
     return $tarefas;
 }
+
+// Função para adicionar uma nova tarefa no banco de dados
+function adicionarTarefa($titulo, $descricao, $data_vencimento) {
+    global $conn;
+    $sql = "INSERT INTO tasks (title, description, due_date) VALUES ('$titulo', '$descricao', '$data_vencimento')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Nova tarefa adicionada com sucesso!";
+    } else {
+        echo "Erro ao adicionar tarefa: " . $conn->error;
+    }
+}
+
+// Verifica se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos estão preenchidos
+    if (!empty($_POST["titulo"]) && !empty($_POST["descricao"]) && !empty($_POST["data_vencimento"])) {
+        // Obtém os dados do formulário
+        $titulo = $_POST["titulo"];
+        $descricao = $_POST["descricao"];
+        $data_vencimento = $_POST["data_vencimento"];
+
+        // Adiciona a tarefa no banco de dados
+        adicionarTarefa($titulo, $descricao, $data_vencimento);
+    } else {
+        echo "Por favor, preencha todos os campos do formulário.";
+    }
+}
 ?>
