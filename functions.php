@@ -8,7 +8,7 @@ function buscarTarefas() {
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT title, description, due_date FROM tasks";
+    $sql = "SELECT title, description, due_date, filter_type FROM tasks";
     $result = $conn->query($sql);
 
     if ($result === false) {
@@ -49,13 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
         $titulo = $_POST["titulo"];
         $descricao = $_POST["descricao"];
         $data_vencimento = $_POST["data_vencimento"];
-
+        // Corrigindo o nome do campo do formulário
+        $tipo_filtro = $_POST['filters'];
         // Verifica se a tarefa já existe no banco de dados
         $sql_check = "SELECT * FROM tasks WHERE title='$titulo'";
         $result_check = $conn->query($sql_check);
         if ($result_check->num_rows == 0) {
             // Adiciona a tarefa no banco de dados
-            $sql_insert = "INSERT INTO tasks (title, description, due_date) VALUES ('$titulo', '$descricao', '$data_vencimento')";
+            $sql_insert = "INSERT INTO tasks (title, description, due_date, filter_type) VALUES ('$titulo', '$descricao', '$data_vencimento', '$tipo_filtro')";
             if ($conn->query($sql_insert) === TRUE) {
                 echo "Nova tarefa adicionada com sucesso!";
             } else {

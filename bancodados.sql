@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     description TEXT,
     due_date DATE,
     is_completed BOOLEAN DEFAULT 0,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    filter_type VARCHAR(15)
 );
 CREATE TABLE IF NOT EXISTS notes (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -34,6 +34,11 @@
                     <input type="text" id="descricao" name="descricao">
                     <label for="data_vencimento">Data de Vencimento:</label>
                     <input type="date" id="data_vencimento" name="data_vencimento">
+                    <select name="filters" id="filters">
+                        <option value="all">Todos</option>
+                        <option value="routine">Rotina</option>
+                        <option value="new">Novos</option>
+                    </select>
                     <input type="submit" name="adicionar_tarefa" value="Adicionar">
                 </form>
             </div>
@@ -49,7 +54,7 @@
                     <input type="date" id="dia" name="diaEvento">
                     <label for="hora">Hora:</label>
                     <input type="time" id="hora" name="horaEvento">
-                    <input type="submit" value="Adicionar">
+                    <input type="submit" value="Adicionar" name="adicionar_evento">
                 </form>
             </div>
         </div>
@@ -73,13 +78,12 @@
             <ul>
                 <?php
                 include 'functions.php';
-
                 // Busca todas as tarefas do banco de dados
                 $tarefas = buscarTarefas();
 
                 // Exibe as tarefas
                 foreach ($tarefas as $tarefa) {
-                    echo "<li>{$tarefa['title']} - {$tarefa['description']} - Data de Vencimento: {$tarefa['due_date']}</li>";
+                    echo "<li>{$tarefa['title']} - {$tarefa['description']} - Data de Vencimento: {$tarefa['due_date']} - {$tarefa['filter_type']}</li>";
                 }
                 ?>
             </ul>
@@ -93,43 +97,16 @@
                 <h2>AGENDA</h2>
                 <button id="add-event-button">Adicionar Evento</button>
                 <ul>
-        <?php
-        // Função para buscar todos os eventos na tabela de notas
-        function buscarEventos() {
-            global $conn; // Certifique-se de que $conn é uma conexão válida e global
+                    <?php
+                    // Busca todos os eventos do banco de dados
+                    $eventos = buscarEventos();
 
-            // Verifica se a conexão com o banco de dados foi estabelecida corretamente
-            if (!$conn) {
-                die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
-            }
-
-            $sql = "SELECT title, note, creation_date FROM notes";
-            $result = $conn->query($sql);
-
-            if ($result === false) {
-                die("Erro na consulta SQL: " . $conn->error);
-            }
-
-            $eventos = array();
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $eventos[] = $row;
-                }
-            }
-
-            return $eventos;
-        }
-
-        // Busca todos os eventos do banco de dados
-        $eventos = buscarEventos();
-
-        // Exibe os eventos
-        foreach ($eventos as $evento) {
-            echo "<li>{$evento['title']} - {$evento['note']} - Data de Criação: {$evento['creation_date']}</li>";
-        }
-        ?>
-    </ul>
+                    // Exibe os eventos
+                    foreach ($eventos as $evento) {
+                        echo "<li>{$evento['title']} - {$evento['note']} - Data de Criação: {$evento['creation_date']}</li>";
+                    }
+                    ?>
+                </ul>
             </div>
             <div class="container progress-container">
                 <h2>PROGRESSO</h2>
