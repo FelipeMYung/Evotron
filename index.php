@@ -27,15 +27,15 @@
             <div class="popup-main">
                 <span id="popup-close">x</span>
                 <h1 style="color: black;">Adicionar Tarefa:</h1>
-                <form method="post">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    <label for="descricao">Descrição:</label>
-                    <input type="text" id="descricao" name="descricao">
-                    <label for="data_vencimento">Data de Vencimento:</label>
-                    <input type="date" id="data_vencimento" name="data_vencimento">
-                    <input type="submit" name="adicionar_tarefa" value="Adicionar">
-                </form>
+                <form method="post" action="add_task.php">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" name="descricao">
+    <label for="data_vencimento">Data de Vencimento:</label>
+    <input type="date" id="data_vencimento" name="data_vencimento">
+    <input type="submit" name="adicionar_tarefa" value="Adicionar">
+</form>
             </div>
         </div>
         <div class="organization-container container">
