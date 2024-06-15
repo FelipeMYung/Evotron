@@ -35,6 +35,11 @@
                     <label for="data_vencimento">Data de Vencimento:</label>
                     <input type="date" id="data_vencimento" name="data_vencimento">
                     <input type="submit" name="adicionar_tarefa" value="Adicionar">
+                    <select name="filters" id="filters">
+                        <option value="all">Todos</option>
+                        <option value="routine">Rotina</option>
+                        <option value="new">Novos</option>
+                    </select>
                 </form>
             </div>
         </div>
@@ -42,14 +47,14 @@
             <div class="popup-main">
                 <span id="agenda-popup-close">x</span>
                 <h1 style="color: black;"> Adicionar Evento na Agenda: </h1>
-                <form method="post" id="AgendaInputs">
+                <form method="post" action="" id="AgendaInputs">
                     <label for="evento">Novo Evento:</label>
-                    <input type="text" id="evento" name="novoEvento">
+                    <input type="text" id="evento" name="novoEvento" required>
                     <label for="dia">Dia:</label>
-                    <input type="date" id="dia" name="diaEvento">
+                    <input type="date" id="dia" name="diaEvento" required>
                     <label for="hora">Hora:</label>
-                    <input type="time" id="hora" name="horaEvento">
-                    <input type="submit" value="Adicionar">
+                    <input type="time" id="hora" name="horaEvento" required>
+                    <input type="submit" value="Adicionar" name="adicionar_evento">
                 </form>
             </div>
         </div>
@@ -93,43 +98,13 @@
                 <h2>AGENDA</h2>
                 <button id="add-event-button">Adicionar Evento</button>
                 <ul>
-        <?php
-        // Função para buscar todos os eventos na tabela de notas
-        function buscarEventos() {
-            global $conn; // Certifique-se de que $conn é uma conexão válida e global
-
-            // Verifica se a conexão com o banco de dados foi estabelecida corretamente
-            if (!$conn) {
-                die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
-            }
-
-            $sql = "SELECT title, note, creation_date FROM notes";
-            $result = $conn->query($sql);
-
-            if ($result === false) {
-                die("Erro na consulta SQL: " . $conn->error);
-            }
-
-            $eventos = array();
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $eventos[] = $row;
+                <?php
+                $eventos = buscarEvento();
+                foreach($eventos as $evento){
+                    echo "<li>{$evento['title']} - {$evento['date_day']} - {$evento['date_hour']}</li>";
                 }
-            }
-
-            return $eventos;
-        }
-
-        // Busca todos os eventos do banco de dados
-        $eventos = buscarEventos();
-
-        // Exibe os eventos
-        foreach ($eventos as $evento) {
-            echo "<li>{$evento['title']} - {$evento['note']} - Data de Criação: {$evento['creation_date']}</li>";
-        }
-        ?>
-    </ul>
+                ?>
+            </ul>
             </div>
             <div class="container progress-container">
                 <h2>PROGRESSO</h2>
