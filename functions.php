@@ -21,7 +21,7 @@ function buscarTarefas() {
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT title, description, due_date FROM tasks";
+    $sql = "SELECT title, description, due_date, typeOfData FROM tasks";
     $result = $conn->query($sql);
 
     if ($result === false) {
@@ -74,13 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
         $titulo = $conn->real_escape_string($_POST["titulo"]);
         $descricao = $conn->real_escape_string($_POST["descricao"]);
         $data_vencimento = $conn->real_escape_string($_POST["data_vencimento"]);
+        $tipoDado = $conn->real_escape_string($_POST["tipo_dado"]);
 
         // Verifica se a tarefa já existe no banco de dados
         $sql_check = "SELECT * FROM tasks WHERE title='$titulo'";
         $result_check = $conn->query($sql_check);
         if ($result_check->num_rows == 0) {
             // Adiciona a tarefa no banco de dados
-            $sql_insert = "INSERT INTO tasks (title, description, due_date) VALUES ('$titulo', '$descricao', '$data_vencimento')";
+            $sql_insert = "INSERT INTO tasks (title, description, due_date, typeOfData) VALUES ('$titulo', '$descricao', '$data_vencimento', ' $tipoDado')";
             if ($conn->query($sql_insert) === TRUE) {
                 echo "Nova tarefa adicionada com sucesso!";
             } else {
@@ -99,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
         $titulo = $conn->real_escape_string($_POST["novoEvento"]);
         $data = $conn->real_escape_string($_POST["diaEvento"]);
         $hora = $conn->real_escape_string($_POST["horaEvento"]);
+
 
         $sql = "INSERT INTO Events_T (title, date_day, date_hour) VALUES ('$titulo', '$data', '$hora')";
 

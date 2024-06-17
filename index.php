@@ -34,12 +34,12 @@
                     <input type="text" id="descricao" name="descricao">
                     <label for="data_vencimento">Data de Vencimento:</label>
                     <input type="date" id="data_vencimento" name="data_vencimento">
-                    <input type="submit" name="adicionar_tarefa" value="Adicionar">
-                    <select name="filters" id="filters">
+                    <select name="tipo_dado" id="tipo_dado">
                         <option value="all">Todos</option>
                         <option value="routine">Rotina</option>
                         <option value="new">Novos</option>
                     </select>
+                    <input type="submit" name="adicionar_tarefa" value="Adicionar">
                 </form>
             </div>
         </div>
