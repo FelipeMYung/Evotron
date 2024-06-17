@@ -48,7 +48,7 @@ function buscarEvento() {
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT title, date_day, date_hour FROM event";
+    $sql = "SELECT title, date_day, date_hour FROM Events_T";
     $result = $conn->query($sql);
 
     if ($result === false) {
@@ -99,9 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
         $titulo = $conn->real_escape_string($_POST["novoEvento"]);
         $data = $conn->real_escape_string($_POST["diaEvento"]);
         $hora = $conn->real_escape_string($_POST["horaEvento"]);
-        $creation_date = date("Y-m-d");
 
-        $sql = "INSERT INTO event (title, date_day, date_hour, creation_date) VALUES ('$titulo', '$data', '$hora', '$creation_date')";
+        $sql = "INSERT INTO Events_T (title, date_day, date_hour) VALUES ('$titulo', '$data', '$hora')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Novo evento adicionado com sucesso!";
