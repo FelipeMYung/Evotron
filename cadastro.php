@@ -20,7 +20,7 @@
       <nav>
           <ul>
             <li><a href="index.php">MENU</a></li>
-            <li style="color:darkgrey;><a href="#">LOGIN</a></li>
+            <li style="color:darkgrey;"><a href="#">LOGIN</a></li>
             <li><a href="Sobre.php">SOBRE</a></li>
             <li><a href="#">CONTATO</a></li>
           </ul>
