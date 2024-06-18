@@ -16,10 +16,11 @@
       </div>
       <nav>
           <ul>
-            <li><a href="index.php">MENU</a></li>
-            <li><a href="cadastro.php">LOGIN</a></li>
-            <li style="color:darkgrey;><a href="#">SOBRE</a></li>
-            <li><a href="#">CONTATO</a></li>
+          <li style="color:darkgrey;"><a href="Menu.php">Home</a></li>
+                <li><a href="index.php">LOGIN</a></li>
+                <li><a href="Sobre.php">SOBRE</a></li>
+                <li><a href="#">CONTATO</a></li>
+            </ul>
           </ul>
       </nav>
   </header>
