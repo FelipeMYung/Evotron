@@ -65,6 +65,31 @@ function buscarEvento() {
 
     return $eventos;
 }
+function buscarNotas() {
+    global $conn; // Tornar $conn global dentro da função
+
+    // Verifica se a conexão com o banco de dados foi estabelecida corretamente
+    if (!$conn) {
+        die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT title, note, creation_date FROM note";
+    $result = $conn->query($sql);
+
+    if ($result === false) {
+        die("Erro na consulta SQL: " . $conn->error);
+    }
+
+    $notas = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $notas[] = $row;
+        }
+    }
+
+    return $notas;
+}
 
 // Verifica se o formulário de adicionar tarefa foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
@@ -106,11 +131,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
 
         if ($conn->query($sql) === TRUE) {
             echo "Novo evento adicionado com sucesso!";
-        } else {
-            echo "Erro ao adicionar evento: " . $conn->error;
-        }
+        } 
     } else {
         echo "Por favor, preencha todos os campos do formulário de adicionar evento.";
+    }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
+    if (!empty($_POST["conteudoNota"])) {
+        $contNota = $conn->real_escape_string($_POST["conteudoNota"]);
+
+
+        $sql = "INSERT INTO notes (note) VALUES ('$contNota')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Nova nota adicionado com sucesso!";
+        } else {
+            echo "Erro ao adicionar a nota: " . $conn->error;
+        }
+    } else {
+        echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
     }
 }
 ?>
