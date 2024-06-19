@@ -8,24 +8,115 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <title>Cadastro</title>
+    <style>p{
+    font-size: 30px;
+    font-family: Noto Sans, sans-serif;
+    text-align: justify;
+}
+.navbar-expand-lg{
+    background-color: #161616;
+}
+.nav-link{
+    font-size: 35px;
+}
+.navbar-brand{
+    font-size: 50px;
+}
+#continua-header{
+    background-color: #161616;
+}
+#header-h1{
+    color: white;
+    font-family: Noto Sans, sans-serif;
+    font-size: 150px;
+}
+#header-h2{
+    color: white;
+    font-family: Noto Sans, sans-serif;
+    font-size: 70px;
+}
+.span-verde{
+    color: #34AD29;
+}
+.span-roxo{
+    color: #481589;
+}
+#transicao-main{
+    background-image: linear-gradient(#929292, #c0c0c0, rgb(255, 255, 255));
+}
+ 
+/* CADASTRO CSS */
+ 
+.cadastro-corpo{
+    background-image:linear-gradient(#050505, #0c0c0c, #050505);
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-flow: column;
+}
+.form-group {
+    position: relative;
+    margin: 12px, 0;
+}
+.form-group input {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: #acacac solid 2px;
+    background-color: transparent;
+    color: #eee;
+    transition: 0.15s all ease;
+}
+.form-group input:focus {
+    border-color: #eee;
+}
+.form-group input::placeholder {
+    color: transparent;
+}
+.form-group .form-label {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    font-size: 18px;
+    padding: 0 10px;
+    color: #acacac;
+    pointer-events: none;
+    transition: 0,15s all ease;
+}
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) +
+.form-label {
+    transform: translate(5px, -22px);
+    background-color: #0c0c0c;
+    font-size: 14px;
+    color: #acacac;
+}
+h4 {
+    font-size: 16px;
+    font-family: Noto Sans, sans-serif;
+}
+#h3-cadastro {
+    font-size: 25px;
+    font-family: Noto Sans, sans-serif;
+    color: #481589;
+}
+#link-cadastro-inicio {
+    text-decoration: none;
+    color: #acacac;
+}
+#link-cadastro-inicio:active {
+    text-decoration: none;
+}
+#link-cadastro-inicio:hover {
+    text-decoration: none;
+}
+</style>
 </head>
 <body class="cadastro-corpo">
-    <header>
-      <div class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-          <span>Olá, Usuário</span> <!-- A mensagem "Olá, Usuário" deve ser dinâmica -->
-      </div>
-      <nav>
-          <ul>
-            <li><a href="index.php">MENU</a></li>
-            <li style="color:darkgrey;"><a href="#">LOGIN</a></li>
-            <li><a href="Sobre.php">SOBRE</a></li>
-            <li><a href="#">CONTATO</a></li>
-          </ul>
-      </nav>
-  </header>
     <main>
     <section>
         <h3 id="h3-cadastro">Insira seu:</h3>
@@ -37,9 +128,9 @@
             <input type="email" placeholder="E-mail">
             <label class="form-label">E-mail</label>
         </div>
-        <button class="btn btn-success btn-lg" style="width: 24.2vh" type="button">Cadastre-se</button>
-        <h4 class="mt-3">Já possui uma conta?<a href="login.php"> faça login</a></h4>
-        <a id="link-cadastro-inicio" href="index.php">Voltar para o início</a>
+        <a href="Menu.php"><button class="btn btn-success btn-lg" style="width: 24.2vh" type="button">Cadastre-se</button></a>
+        <h4 class="mt-3">Já possui uma conta?<a href="login.html"> Faça login</a></h4>
+        <a id="link-cadastro-inicio" href="Menu.php">Voltar para o início</a>
     </section>
     </main>
 </body>

@@ -76,7 +76,7 @@
             <div class="tasks-container2">
                 <button id="add-task-button">Adicionar Tarefa</button>
             </div>
-            <ul>
+            <ul id='lista_tarefas'>
                 <?php
                 include 'functions.php';
 
@@ -85,7 +85,9 @@
 
                 // Exibe as tarefas
                 foreach ($tarefas as $tarefa) {
-                    echo "<li>{$tarefa['title']} - {$tarefa['description']} - Data de Vencimento: {$tarefa['due_date']}</li>";
+                    echo "<li>
+                     <div class='task_block'>{$tarefa['title']} <br> {$tarefa['description']} <br> Data de Vencimento: {$tarefa['due_date']} <input type='checkbox' value='completo' name='completo'></div>
+                    </li>";
                 }
                 ?>
             </ul>

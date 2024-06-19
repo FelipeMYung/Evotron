@@ -57,6 +57,21 @@ main {
   flex: 1;
 }
 
+#lista_tarefas li{
+  list-style: none;
+  width: 200px;
+  height: 100px;
+  background-color: #008000;
+  margin: 3%;
+  padding: 10px;
+  border-radius: 5%;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .popup-background {
   display: none; /* Escondido por padrão */
   width: 100%;
@@ -123,6 +138,8 @@ main {
 #AgendaInputs input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+
 .container {
   background-color: #3e003e;
   padding: 20px;

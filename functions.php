@@ -108,12 +108,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
             // Adiciona a tarefa no banco de dados
             $sql_insert = "INSERT INTO tasks (title, description, due_date, typeOfData) VALUES ('$titulo', '$descricao', '$data_vencimento', ' $tipoDado')";
             if ($conn->query($sql_insert) === TRUE) {
-                echo "Nova tarefa adicionada com sucesso!";
             } else {
                 echo "Erro ao adicionar tarefa: " . $conn->error;
             }
         } else {
-            echo "A tarefa já existe.";
+            
         }
     } else {
         echo "Por favor, preencha todos os campos do formulário de adicionar tarefa.";
