@@ -80,11 +80,18 @@
 
                 foreach ($tarefas as $tarefa) {
                     echo "<li>
-                    <div class='task_block'>{$tarefa['title']} <br> {$tarefa['description']} <br> Data de Vencimento: {$tarefa['due_date']} <input type='checkbox' value='completo' name='completo'></div>
+                        <div class='task_block'>
+                            {$tarefa['title']} <br> {$tarefa['description']} <br> Data de Vencimento: {$tarefa['due_date']}
+                            <form method='post' action=''>
+                                <input type='hidden' name='titulo' value='{$tarefa['title']}'>
+                                <button type='submit' name='deletar_tarefa'>Delete</button>
+                            </form>
+                        </div>
                     </li>";
                 }
                 ?>
             </ul>
+
                 <form method="post" class="notes-container">
                     <input type="text" id="main_notes"  name="conteudoNota">
                     <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>

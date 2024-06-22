@@ -90,4 +90,20 @@ function buscarNotas() {
 
     return $notas;
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
+    if (!empty($_POST["titulo"])) {
+        $titulo = $conn->real_escape_string($_POST["titulo"]);
+
+        $sql = "DELETE FROM tasks WHERE title='$titulo'";
+
+        if ($conn->query($sql) === TRUE) {
+          //  echo "Tarefa deletada com sucesso!";
+        } else {
+          // echo "Erro ao deletar tarefa: " . $conn->error;
+        }
+    }
+}
+
+
 ?>
