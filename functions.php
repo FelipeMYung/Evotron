@@ -136,11 +136,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
-    if (!empty($_POST["conteudoNota"])) {
+    if (!empty($_POST["conteudoNota"]) && !empty($_POST['tituloNota'])) {
+
         $contNota = $conn->real_escape_string($_POST["conteudoNota"]);
+        $tituloNota = $conn->real_escape_string($_POST["tituloNota"]);
 
 
-        $sql = "INSERT INTO notes (note) VALUES ('$contNota')";
+        $sql = "INSERT INTO notes (title, note) VALUES ('$tituloNota', '$contNota')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Nova nota adicionado com sucesso!";
