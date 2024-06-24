@@ -309,9 +309,9 @@ ul {
 }
 
 #calendar {
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   padding: 10px;
-  background-color: #fff;
+  background-color: #8f0666;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 300px; /* Limitar a largura do calendário para melhor visualização */
 }
@@ -321,7 +321,7 @@ ul {
   flex-wrap: wrap; /* Para permitir que os dias da semana quebrem linha quando necessário */
   justify-content: space-between;
   padding: 5px;
-  background-color: #f0f0f0;
+  background-color: #292525;
   border-bottom: 1px solid #ccc;
 }
 
