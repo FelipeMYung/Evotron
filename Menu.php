@@ -28,13 +28,14 @@
                 <div class="popup-main">
                     <span id="popup-close">x</span>
                     <h1 style="color: black;">Adicionar Tarefa:</h1>
-                    <form method="post">
+                    <form method="post" id="popup_inputs">
                         <label for="titulo">Título:</label>
                         <input type="text" id="titulo" name="titulo" required>
                         <label for="descricao">Descrição:</label>
                         <input type="text" id="descricao" name="descricao">
                         <label for="data_vencimento">Data de Vencimento:</label>
                         <input type="date" id="data_vencimento" name="data_vencimento">
+                        <label for="tipo_dado">Tipo de tarefa:</label>
                         <select name="tipo_dado" id="tipo_dado">
                             <option value="routine">Rotina</option>
                             <option value="new">Novos</option>
@@ -49,11 +50,11 @@
                     <h1 style="color: black;"> Adicionar Evento na Agenda: </h1>
                     <form method="post" action="" id="AgendaInputs">
                         <label for="evento">Novo Evento:</label>
-                        <input type="text" id="evento" name="novoEvento" required>
+                        <input type="text" id="evento" name="novoEvento" >
                         <label for="dia">Dia:</label>
-                        <input type="date" id="dia" name="diaEvento" required>
+                        <input type="date" id="dia" name="diaEvento" >
                         <label for="hora">Hora:</label>
-                        <input type="time" id="hora" name="horaEvento" required>
+                        <input type="time" id="hora" name="horaEvento" >
                         <input type="submit" value="Adicionar" name="adicionar_evento">
                     </form>
                 </div>
