@@ -346,3 +346,9 @@ ul {
   background-color: #ccc;
   color: #666;
 }
+
+#sobres{
+  background-color: rgba(0, 0, 0, 0.315);
+  padding: 50px;
+  border-radius:1%  ;
+}
