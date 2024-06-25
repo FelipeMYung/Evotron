@@ -92,11 +92,13 @@
                 ?>
             </ul>
 
+                <div class='notes inputs'>
                 <form method="post" class="notes-container" class= "Bunton">
-                    <input type="text" name="tituloNota">
-                    <input type="text" id="main_notes"  name="conteudoNota">
+                    <input type="text" name="tituloNota" placeholder="Título">
+                    <input type="text" id="main_notes" cols='2  ' name="conteudoNota" placeholder="Conteúdo">
                     <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>
                 </form>
+                </div>
             </div>
             <div class="sidebar-container">
                 <div class="container schedule-container">
