@@ -125,7 +125,8 @@ ul{
 #AgendaInputs input[type="time"],
 #AgendaInputs input[type="submit"] {
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;

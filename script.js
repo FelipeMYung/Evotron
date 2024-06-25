@@ -85,4 +85,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Chama a função para criar o calendário do mês atual
     const currentDate = new Date();
     createCalendar(currentDate.getFullYear(), currentDate.getMonth() + 1);
+
     
+// Array com os nomes dos meses
+const nomesDosMeses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+];
+
+// Obtém a data atual
+const dataAtual = new Date();
+
+// Obtém o ano, mês e dia (meses em JavaScript são baseados em zero)
+const ano = dataAtual.getFullYear();
+const mes = dataAtual.getMonth(); // Retorna um valor de 0 a 11
+const dia = dataAtual.getDate(); // Retorna o dia do mês
+
+// Obtém o nome do mês correspondente
+const nomeDoMes = nomesDosMeses[mes];
+
+// Formata o dia para garantir que tenha dois dígitos
+const diaFormatado = dia < 10 ? `0${dia}` : dia;
+
+// Exibe o ano, o mês e o dia na tela
+document.getElementById('data').textContent = `Data: ${diaFormatado} de ${nomeDoMes} de ${ano}`;
