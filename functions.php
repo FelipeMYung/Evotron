@@ -145,12 +145,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
         $sql = "INSERT INTO notes (title, note) VALUES ('$tituloNota', '$contNota')";
  
         if ($conn->query($sql) === TRUE) {
-            echo "Nova nota adicionado com sucesso!";
+           // echo "Nova nota adicionado com sucesso!";
         } else {
-            echo "Erro ao adicionar a nota: " . $conn->error;
+          //  echo "Erro ao adicionar a nota: " . $conn->error;
         }
     } else {
-        echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
+       // echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
