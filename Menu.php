@@ -93,7 +93,6 @@
             </ul>
 
                 <form method="post" class="notes-container">
-                    <input type="text" name="tituloNota">
                     <input type="text" id="main_notes"  name="conteudoNota">
                     <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>
                 </form>
