@@ -348,6 +348,17 @@ ul{
   cursor: pointer;
 }
 
+#calendar .past {
+  background-color: #ccc;
+  color: #666;
+}
+
+#sobres{
+  background-color: rgba(0, 0, 0, 0.315);
+  padding: 50px;
+  border-radius:1%  ;
+}
+
 .calendar-day:hover {
   background-color: #f0f0f0;
 }
