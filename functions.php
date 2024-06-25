@@ -73,7 +73,7 @@ function buscarNotas() {
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
  
-    $sql = "SELECT title, note, creation_date FROM note";
+    $sql = "SELECT title, note, creation_date FROM notes";
     $result = $conn->query($sql);
  
     if ($result === false) {

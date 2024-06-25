@@ -99,6 +99,14 @@
                     <input type="text" id="main_notes" cols='2  ' name="conteudoNota" placeholder="Conteúdo">
                     <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>
                 </form>
+                <ul>
+                <?php
+                    $notas = buscarNotas();
+                    foreach($notas as $nota){
+                        echo "<li>{$nota['title']} - {$nota['note']}</li>";
+                    }
+                    ?>
+                </ul>
                 </div>
             </div>
             <div class="sidebar-container">
@@ -109,7 +117,7 @@
                     <?php
                     $eventos = buscarEvento();
                     foreach($eventos as $evento){
-                        echo "<li>{$evento['title']} - {$evento['date_day']} - {$evento['date_hour']}</li>";
+                        echo "<li>{$evento['title']} - {$evento['date_day']} - {$evento['date_hour']}</li> ";
                     }
                     ?>
                 </ul>
