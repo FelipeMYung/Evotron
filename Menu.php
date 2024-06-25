@@ -110,27 +110,7 @@
                     ?>
                 </ul>
                 </div>
-                <div class="container progress-container">
-                    <h2>PROGRESSO</h2>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-bar-filled" style="width: 75%"></div>
-                        </div>
-                        <span>Físico</span>
-                    </div>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-bar-filled" style="width: 50%"></div>
-                        </div>
-                        <span>Mental</span>
-                    </div>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-bar-filled" style="width: 90%"></div>
-                        </div>
-                        <span>Estudos</span>
-                    </div>
-                </div>
+                <div id="calendar"></div>
             </div>
         </main>
         <script src="script.js"></script>
