@@ -122,7 +122,12 @@
                     <?php
                     $eventos = buscarEvento();
                     foreach($eventos as $evento){
-                        echo "<li>{$evento['title']} - {$evento['date_day']} - {$evento['date_hour']}</li> ";
+                        echo "<li>{$evento['title']} - {$evento['date_day']} - {$evento['date_hour']}
+                        <form method='post' action=''>
+                            <input type='hidden' name='novoEvento' value='{$evento['title']}'>
+                            <button type='submit' name='deletar_evento'>Delete</button>
+                        </form>
+                        </li> ";
                     }
                     ?>
                 </ul>

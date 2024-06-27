@@ -153,6 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
        // echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
     }
 }
+//deletar atividades: 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
     if (!empty($_POST["titulo"])) {
         $titulo = $conn->real_escape_string($_POST["titulo"]);
@@ -166,11 +167,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
         }
     }
 }
-// Lógica de deleção
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_nota"])) {
     if (!empty($_POST["tituloNota"])) {
         $tituloNota = $conn->real_escape_string($_POST["tituloNota"]);
         $sql = "DELETE FROM notes WHERE title='$tituloNota'";
+
+        if ($conn->query($sql) === TRUE) {
+            // echo "Nota deletada com sucesso!";
+        } else {
+            // echo "Erro ao deletar nota: " . $conn->error;
+        }
+    }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_evento"])) {
+    if (!empty($_POST["novoEvento"])) {
+        $titulo = $conn->real_escape_string($_POST["novoEvento"]);
+        $sql = "DELETE FROM events_t WHERE title='$titulo'";
 
         if ($conn->query($sql) === TRUE) {
             // echo "Nota deletada com sucesso!";
