@@ -166,4 +166,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
         }
     }
 }
+// Lógica de deleção
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_nota"])) {
+    if (!empty($_POST["tituloNota"])) {
+        $tituloNota = $conn->real_escape_string($_POST["tituloNota"]);
+        $sql = "DELETE FROM notes WHERE title='$tituloNota'";
+
+        if ($conn->query($sql) === TRUE) {
+            // echo "Nota deletada com sucesso!";
+        } else {
+            // echo "Erro ao deletar nota: " . $conn->error;
+        }
+    }
+}
 ?>

@@ -103,7 +103,12 @@
                 <?php
                     $notas = buscarNotas();
                     foreach($notas as $nota){
-                        echo "<li>{$nota['title']} - {$nota['note']}</li>";
+                        echo "<li>{$nota['title']} - {$nota['note']}
+                        <form method='post' action=''>
+                            <input type='hidden' name='tituloNota' value='{$nota['title']}'>
+                            <button type='submit' name='deletar_nota'>Delete</button>
+                        </form>
+                        </li>";
                     }
                     ?>
                 </ul>
