@@ -94,11 +94,11 @@ function buscarNotas() {
 // Verifica se o formulário de adicionar tarefa foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
     // Verifica se todos os campos estão preenchidos
-    if (!empty($_POST["titulo"]) && !empty($_POST["descricao"]) && !empty($_POST["data_vencimento"])) {
+    if (!empty($_POST["titulo"]) ) {
         // Obtém os dados do formulário
         $titulo = $conn->real_escape_string($_POST["titulo"]);
         $descricao = $conn->real_escape_string($_POST["descricao"]);
-        $data_vencimento = $conn->real_escape_string($_POST["data_vencimento"]);
+        //$data_vencimento = $conn->real_escape_string($_POST["data_vencimento"]);
         $tipoDado = $conn->real_escape_string($_POST["tipo_dado"]);
  
         // Verifica se a tarefa já existe no banco de dados
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
         $result_check = $conn->query($sql_check);
         if ($result_check->num_rows == 0) {
             // Adiciona a tarefa no banco de dados
-            $sql_insert = "INSERT INTO tasks (title, description, due_date, typeOfData) VALUES ('$titulo', '$descricao', '$data_vencimento', ' $tipoDado')";
+            $sql_insert = "INSERT INTO tasks (title, description, typeOfData) VALUES ('$titulo', '$descricao', ' $tipoDado')";
             if ($conn->query($sql_insert) === TRUE) {
             } else {
                // echo "Erro ao adicionar tarefa: " . $conn->error;
@@ -192,5 +192,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_evento"])) {
     }
 }
 
-// função para calcular se 
+// função para calcular o prazo
+// SE(prazo<24:00 restantes){colocar na fileira de HOJE}SENAO{colocar na fileira PRÓXIMOS}
 ?>

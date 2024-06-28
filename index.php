@@ -82,7 +82,7 @@
                 foreach ($tarefas as $tarefa) {
                     echo "<li>
                         <div class='task_block'>
-                            {$tarefa['title']} <br> {$tarefa['description']} <br> Data de Vencimento: {$tarefa['due_date']}
+                            {$tarefa['title']} <br> {$tarefa['description']} <br>
                             <form method='post' action=''>
                                 <input type='hidden' name='titulo' value='{$tarefa['title']}'>
                                 <button type='submit' name='deletar_tarefa'>Delete</button>
