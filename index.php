@@ -16,7 +16,7 @@
             </div>
             <nav>
                 <ul>
-                <li ><a style="color:darkgrey;" href="Menu.php">HOME</a></li>
+                <li ><a style="color:darkgrey;" href="index.php">HOME</a></li>
                     <li><a href="cadastro.php">LOGIN</a></li>
                     <li><a href="Sobre.php">SOBRE</a></li>
                     <li><a href="#">CONTATO</a></li>

@@ -130,7 +130,7 @@ tem menu de contexto</style>
         </div>
         <a href="Menu.php"><button class="btn btn-success btn-lg" style="width: 24.2vh" type="button">Cadastre-se</button></a>
         <h4 class="mt-3">Já possui uma conta?<a href="login.html"> Faça login</a></h4>
-        <a id="link-cadastro-inicio" href="Menu.php">Voltar para o início</a>
+        <a id="link-cadastro-inicio" href="index.php">Voltar para o início</a>
     </section>
     </main>
 </body>

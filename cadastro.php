@@ -29,7 +29,7 @@
 
         <a href="Menu.php">
             <button class="btn btn-success btn-lg" style="width: 40.2vh" type="button">Cadastre-se</button></a>
-        <a id="link-cadastro-inicio" href="Menu.php">Voltar para o início</a>
+        <a id="link-cadastro-inicio" href="index.php">Voltar para o início</a>
     </section>
 
     <section class="login">
@@ -47,7 +47,7 @@
         <a href="Menu.php">
             <button class="btn btn-success btn-lg" style="width: 40.2vh" type="button">Login</button></a>
             
-        <a id="link-cadastro-inicio" href="Menu.php">Voltar para o início</a>
+        <a id="link-cadastro-inicio" href="index.php">Voltar para o início</a>
     </section>
     </main>
 </body>
