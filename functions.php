@@ -109,13 +109,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_tarefa"])) {
             $sql_insert = "INSERT INTO tasks (title, description, due_date, typeOfData) VALUES ('$titulo', '$descricao', '$data_vencimento', ' $tipoDado')";
             if ($conn->query($sql_insert) === TRUE) {
             } else {
-                echo "Erro ao adicionar tarefa: " . $conn->error;
+               // echo "Erro ao adicionar tarefa: " . $conn->error;
             }
         } else {
            
         }
     } else {
-        echo "Por favor, preencha todos os campos do formulário de adicionar tarefa.";
+       // echo "Por favor, preencha todos os campos do formulário de adicionar tarefa.";
     }
 }
  
@@ -129,10 +129,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
         $sql = "INSERT INTO Events_T (title, date_day, date_hour) VALUES ('$titulo', '$data', '$hora')";
  
         if ($conn->query($sql) === TRUE) {
-            echo "Novo evento adicionado com sucesso!";
+           // echo "Novo evento adicionado com sucesso!";
         }
     } else {
-        echo "Por favor, preencha todos os campos do formulário de adicionar evento.";
+       // echo "Por favor, preencha todos os campos do formulário de adicionar evento.";
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
@@ -191,4 +191,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_evento"])) {
         }
     }
 }
+
+// função para calcular se 
 ?>

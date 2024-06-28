@@ -132,8 +132,8 @@
                     ?>
                 </ul>
                 </div>
-                <div id="calendar"></div>
                 <h3 id="data"></h3>
+                <div id="calendar"></div>
             </div>
         </main>
         <script src="script.js"></script>
