@@ -71,7 +71,6 @@ ul{
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .popup-background {
   display: none; /* Escondido por padrão */
   width: 100%;
