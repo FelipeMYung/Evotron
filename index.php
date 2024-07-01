@@ -93,7 +93,7 @@
                 ?>
             </ul>
 
-                <div class='notes inputs'>
+                <div class='notes_inputs'>
                 <form method="post" class="notes-container" class= "Bunton">
                     <input type="text" name="tituloNota" placeholder="Título">
                     <input type="text" id="main_notes" cols='2  ' name="conteudoNota" placeholder="Conteúdo">
@@ -103,7 +103,7 @@
                 <?php
                     $notas = buscarNotas();
                     foreach($notas as $nota){
-                        echo "<li>{$nota['title']} - {$nota['note']}
+                        echo "<li class='note_block'>{$nota['title']} -<br> {$nota['note']}
                         <form method='post' action=''>
                             <input type='hidden' name='tituloNota' value='{$nota['title']}'>
                             <button type='submit' name='deletar_nota'>Delete</button>

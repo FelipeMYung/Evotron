@@ -62,7 +62,7 @@ main {
   width: 200px;
   height: 100px;
   background-color: #008000;
-  margin: 3%;
+  margin-right: 3%;
   padding: 10px;
   border-radius: 5%;
 }
@@ -70,6 +70,7 @@ ul{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-left: 0;
 }
 .popup-background {
   display: none; /* Escondido por padrão */
@@ -208,6 +209,14 @@ ul{
 .task-checkbox {
   display: none;
 }
+.note_block{
+  background-color: #212529;
+  list-style: none;
+  margin-bottom:10px;
+  padding: 10px;
+  width: 100%;
+}
+
 .filter {
   background-color: #9e9393;
   color: white;
@@ -233,6 +242,10 @@ ul{
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.notes_input ul{
+  list-style: none;
+  padding-right: 0;
 }
 
 .notes-container input {

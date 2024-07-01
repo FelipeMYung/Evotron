@@ -137,22 +137,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_evento"])) {
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["adicionar_nota"])) {
     if (!empty($_POST["conteudoNota"]) && !empty($_POST['tituloNota'])) {
- 
-        $contNota = $conn->real_escape_string($_POST["conteudoNota"]);
         $tituloNota = $conn->real_escape_string($_POST["tituloNota"]);
- 
- 
-        $sql = "INSERT INTO notes (title, note) VALUES ('$tituloNota', '$contNota')";
- 
-        if ($conn->query($sql) === TRUE) {
-           // echo "Nova nota adicionado com sucesso!";
+        $contNota = $conn->real_escape_string($_POST["conteudoNota"]);
+        
+        // Verifica se a nota já existe no banco de dados
+        $sql_check = "SELECT * FROM notes WHERE title='$tituloNota' AND note='$contNota'";
+        $result_check = $conn->query($sql_check);
+
+        if ($result_check->num_rows == 0) {
+            // Adiciona a nota no banco de dados
+            $sql_insert = "INSERT INTO notes (title, note) VALUES ('$tituloNota', '$contNota')";
+            if ($conn->query($sql_insert) === TRUE) {
+                // Nota adicionada com sucesso
+            } else {
+                // echo "Erro ao adicionar a nota: " . $conn->error;
+            }
         } else {
-          //  echo "Erro ao adicionar a nota: " . $conn->error;
+            // echo "Nota já existe!";
         }
     } else {
-       // echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
+        // echo "Por favor, preencha todos os campos do formulário de adicionar nota.";
     }
 }
+
 //deletar atividades: 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_tarefa"])) {
     if (!empty($_POST["titulo"])) {
