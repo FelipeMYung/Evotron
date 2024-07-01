@@ -33,8 +33,6 @@
                         <input type="text" id="titulo" name="titulo" required>
                         <label for="descricao">Descrição:</label>
                         <input type="text" id="descricao" name="descricao">
-                        <label for="data_vencimento">Data de Vencimento:</label>
-                        <input type="date" id="data_vencimento" name="data_vencimento">
                         <label for="tipo_dado">Tipo de tarefa:</label>
                         <select name="tipo_dado" id="tipo_dado">
                             <option value="routine">Rotina</option>
@@ -96,14 +94,14 @@
                 <div class='notes_inputs'>
                 <form method="post" class="notes-container" class= "Bunton">
                     <input type="text" name="tituloNota" placeholder="Título">
-                    <input type="text" id="main_notes" cols='2  ' name="conteudoNota" placeholder="Conteúdo">
+                    <textarea name="conteudoNota" cols='2'id="main_notes" placeholder="Conteúdo"></textarea>
                     <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>
                 </form>
                 <ul>
                 <?php
                     $notas = buscarNotas();
                     foreach($notas as $nota){
-                        echo "<li class='note_block'>{$nota['title']} -<br> {$nota['note']}
+                        echo "<li class='note_block'><div><strong>{$nota['title']} </strong> -<br> {$nota['note']}</div>
                         <form method='post' action=''>
                             <input type='hidden' name='tituloNota' value='{$nota['title']}'>
                             <button type='submit' name='deletar_nota'>Delete</button>

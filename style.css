@@ -63,6 +63,7 @@ main {
   height: 100px;
   background-color: #008000;
   margin-right: 3%;
+  margin-top:3%;
   padding: 10px;
   border-radius: 5%;
 }
@@ -215,6 +216,12 @@ ul{
   margin-bottom:10px;
   padding: 10px;
   width: 100%;
+  word-wrap: break-word; /* Permite a quebra de palavras longas */
+  word-break: break-all; /* Quebra palavras longas quando não há espaço disponível */
+  white-space: pre-wrap; /* Mantém as quebras de linha e espaços */
+}
+.note_block form{
+  height: 20px;
 }
 
 .filter {
@@ -266,6 +273,7 @@ ul{
 #main_notes{
   padding-bottom: 100px;
   max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Estilos para a barra lateral */
