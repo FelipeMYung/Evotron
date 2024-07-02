@@ -35,8 +35,8 @@
                         <input type="text" id="descricao" name="descricao">
                         <label for="tipo_dado">Tipo de tarefa:</label>
                         <select name="tipo_dado" id="tipo_dado">
-                            <option value="routine">Rotina</option>
                             <option value="new">Novos</option>
+                            <option value="routine">Rotina</option>
                         </select>
                         <input type="submit" name="adicionar_tarefa" value="Adicionar">
                     </form>
@@ -59,8 +59,8 @@
             </div>
             <div class="organization-container container">
             <h2>ORGANIZAÇÃO</h2>
+            <h3>TAREFAS:</h3>
             <div class="tasks-container">
-                <h3>TAREFAS:</h3>
                 <form method="GET" action="">
                     <button type="submit" name="filter" value="all">Todos</button>
                     <button type="submit" name="filter" value="new">Novos</button>
@@ -90,7 +90,7 @@
                 }
                 ?>
             </ul>
-
+                <h3>Notas: </h3>
                 <div class='notes_inputs'>
                 <form method="post" class="notes-container" class= "Bunton">
                     <input type="text" name="tituloNota" placeholder="Título">
@@ -115,6 +115,7 @@
             <div class="sidebar-container">
                 <div class="container schedule-container">
                     <h2>AGENDA</h2>
+                    <h3>Eventos: </h3>
                     <button id="add-event-button">Adicionar Evento</button>
                     <ul>
                     <?php
@@ -130,7 +131,8 @@
                     ?>
                 </ul>
                 </div>
-                <h3 id="data"></h3>
+                <h3>Calendário: </h3>
+                <h4 id="data"></h4>
                 <div id="calendar"></div>
             </div>
         </main>
