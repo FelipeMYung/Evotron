@@ -180,6 +180,13 @@ ul{
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.task_block form button{
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+.task_block {
+  margin:10px;
+}
 
 .task:hover{
   opacity: 0.8;
@@ -222,6 +229,17 @@ ul{
 }
 .note_block form{
   height: 20px;
+}
+.event_block{
+  background-color: #007bff;
+  color: black;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+.event_block button{
+  background-color: #008000;
+  border-radius: 10px;
 }
 
 .filter {
@@ -288,6 +306,9 @@ ul{
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.schedule-container ul{
+  list-style: none;
 }
 
 .schedule-item, .schedule-item2 {
