@@ -63,8 +63,8 @@
             <div class="tasks-container">
                 <form method="GET" action="">
                     <button type="submit" name="filter" value="all">Todos</button>
-                    <button type="submit" name="filter" value="new">Novos</button>
-                    <button type="submit" name="filter" value="routine">Rotina</button>
+                    <button type="submit" name="filter" value=" new">Novos</button>
+                    <button type="submit" name="filter" value=" routine">Rotina</button>
                 </form>
             </div>
             <div class="tasks-container2">
@@ -72,22 +72,27 @@
             </div>
             <ul id='lista_tarefas'>
                 <?php
-                include 'functions.php';
+                    include 'functions.php';
 
-                $filtro = isset($_GET['filter']) ? $_GET['filter'] : 'all';
-                $tarefas = buscarTarefas($filtro);
+                    // Definir o filtro
+                    $filtro = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
-                foreach ($tarefas as $tarefa) {
-                    echo "<li>
-                        <div class='task_block'>
-                            <strong>{$tarefa['title']}</strong> <br> {$tarefa['description']} <br>
-                            <form method='post' action=''>
-                                <input type='hidden' name='titulo' value='{$tarefa['title']}'>
-                                <button type='submit' name='deletar_tarefa'>Delete</button>
-                            </form>
-                        </div>
-                    </li>";
-                }
+                    // Buscar tarefas com base no filtro
+                    $tarefas = buscarTarefas($filtro);
+                    // Filtrar tarefas de acordo com o filtro selecionado
+                    foreach ($tarefas as $tarefa) {
+                        if ($filtro === 'all' ||$tarefa['typeOfData'] === $filtro) {
+                            echo "<li>
+                                <div class='task_block'>
+                                    <strong>{$tarefa['title']}</strong> <br> {$tarefa['description']} <br>
+                                    <form method='post' action=''>
+                                        <input type='hidden' name='titulo' value='{$tarefa['title']}'>
+                                        <button type='submit' name='deletar_tarefa'>Delete</button>
+                                    </form>
+                                </div>
+                            </li>";
+                        }
+                    }
                 ?>
             </ul>
                 <h3>Notas: </h3>
