@@ -82,7 +82,7 @@
                     // Filtrar tarefas de acordo com o filtro selecionado
                     foreach ($tarefas as $tarefa) {
                         if ($filtro === 'all' ||$tarefa['typeOfData'] === $filtro) {
-                            echo "<li>
+                            echo "<li class='li-task-block'>
                                 <div class='task_block'>
                                     <strong>{$tarefa['title']}</strong> <br> {$tarefa['description']} <br>
                                     <form method='post' action=''>

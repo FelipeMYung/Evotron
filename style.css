@@ -10,9 +10,17 @@ body {
   min-height: 100vh;
 }
 
+:root {
+  --cor_primaria: #8200F4;
+  --cor_secundaria:#9c98a7;
+  --cor--terciaria:#04880a;
+  --cor-btn:#0056b3;
+  --cor-btn-txt:white;
+}
+
 /* Estilos para o cabeçalho */
 header {
-  background-color: #d9d9d9;
+  background-color: var(--cor_secundaria);
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -60,13 +68,15 @@ main {
   gap: 20px;
   flex: 1;
 }
-
+#lista_tarefas{
+  display: flex;
+  justify-content: space-around;
+}
 #lista_tarefas li{
   list-style: none;
-  width: 200px;
+  width: 30%;
   height: 100px;
-  background-color: #008000;
-  margin-right: 3%;
+  background-color: var(--cor--terciaria);
   margin-top:3%;
   padding: 10px;
   border-radius: 5%;
@@ -138,14 +148,15 @@ ul{
 }
 
 #AgendaInputs input[type="submit"] {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 #AgendaInputs input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
 }
 
 
@@ -177,7 +188,8 @@ ul{
 .tasks-container2 button{
   width: 100%;
   height: 40px;
-  background-color: #28a745;
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
 }
 
 .task {
@@ -243,16 +255,28 @@ ul{
 .note_block form{
   height: 20px;
 }
+.note_block button{
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
+  border-radius: 10px;
+}
 .event_block{
-  background-color: #007bff;
+  background-color: var(--cor--terciaria);
   color: black;
   width: 100%;
   margin-top: 10px;
   padding: 10px;
   border-radius: 10px;
 }
+#add-event-button{
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
+  width: 100%;
+  height: 30px;
+}
 .event_block button{
-  background-color: #008000;
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
   border-radius: 10px;
 }
 
@@ -296,16 +320,19 @@ ul{
 
 .notes-container button {
   padding: 10px;
-  background-color: #28a745;
-  color: white;
+  background-color: var(--cor-btn);
+  color: var(--cor-btn-txt);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 #main_notes{
+  resize: none; /* Previne redimensionamento */
   padding-bottom: 100px;
   max-width: 100%;
+  height: 150px;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
 }
 
 /* Estilos para a barra lateral */
@@ -361,20 +388,13 @@ ul{
     flex-direction: row;
   }
 }
-
 @media (max-width: 767px) {
   .notes-container {
     flex-direction: column;
   }
-
-  .notes-container input, .notes-container button {
+  #lista_tarefas li{
     width: 100%;
   }
-.bunton {
-  
-  
-}
-
   .notes-container button {
     margin-top: 10px;
   }
