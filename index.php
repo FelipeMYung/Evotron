@@ -27,7 +27,7 @@
             <div class="popup-background" id="popup-background">
                 <div class="popup-main">
                     <span id="popup-close">x</span>
-                    <h1 style="color: black;">Adicionar Tarefa:</h1>
+                    <h1>Adicionar Tarefa:</h1>
                     <form method="post" id="popup_inputs">
                         <label for="titulo">Título:</label>
                         <input type="text" id="titulo" name="titulo" required>
