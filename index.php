@@ -95,6 +95,7 @@
                     }
                 ?>
             </ul>
+            <hr id='linha'>
                 <h3>Notas: </h3>
                 <div class='notes_inputs'>
                 <form method="post" class="notes-container" class= "Bunton">
