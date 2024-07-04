@@ -11,7 +11,7 @@ body {
 }
 
 :root {
-  --cor_primaria: #8200F4;
+  --cor_primaria: #3e003e;
   --cor_secundaria:#9c98a7;
   --cor--terciaria:#04880a;
   --cor-btn:#0056b3;
@@ -106,12 +106,12 @@ ul{
 .popup-main {
   width: 70%;
   max-width: 500px;
-  background-color: #3ab45f;
+  background-color: var(--cor_primaria);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.64);
   position: relative;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 #popup-close {
@@ -161,7 +161,7 @@ ul{
 
 
 .container {
-  background-color: #3e003e;
+  background-color: var(--cor_primaria);
   padding: 20px;
   border-radius: 8px;
 }
@@ -224,7 +224,7 @@ ul{
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
 }
 
 .task.completed {
@@ -262,7 +262,7 @@ ul{
 }
 .event_block{
   background-color: var(--cor--terciaria);
-  color: black;
+  color: white;
   width: 100%;
   margin-top: 10px;
   padding: 10px;

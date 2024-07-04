@@ -45,7 +45,7 @@
             <div class="popup-background" id="agenda-popup-background">
                 <div class="popup-main">
                     <span id="agenda-popup-close">x</span>
-                    <h1 style="color: black;"> Adicionar Evento na Agenda: </h1>
+                    <h1> Adicionar Evento na Agenda: </h1>
                     <form method="post" action="" id="AgendaInputs">
                         <label for="evento">Novo Evento:</label>
                         <input type="text" id="evento" name="novoEvento" >
