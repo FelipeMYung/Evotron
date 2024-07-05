@@ -93,7 +93,7 @@
                         if ($tarefa['is_completed'] == 0) {
                             echo "<button type='submit' name='tarefa_completa'>Completa</button>";
                         } else {
-                            echo "<button type='submit' name='tarefa_incompleta'>Descompleta</button>";
+                            echo "<button type='submit' name='tarefa_incompleta'>Incompleta</button>";
                         }
                         
                         echo "</form>
@@ -104,9 +104,9 @@
                 ?>
 
             </ul>
-            <h3>Tarefas completas: 
+            <h4>Tarefas completas: 
                 <?php tarefasFeitas(); ?> 
-            </h3>
+            </h4>
             <hr id='linha'>
                 <h3>Notas: </h3>
                 <div class='notes_inputs'>
