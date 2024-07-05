@@ -71,30 +71,42 @@
                 <button id="add-task-button">Adicionar Tarefa</button>
             </div>
             <ul id='lista_tarefas'>
-                <?php
-                    include 'functions.php';
+            <?php
+                include 'functions.php';
 
-                    // Definir o filtro
-                    $filtro = isset($_GET['filter']) ? $_GET['filter'] : 'all';
+                // Definir o filtro
+                $filtro = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
-                    // Buscar tarefas com base no filtro
-                    $tarefas = buscarTarefas($filtro);
-                    // Filtrar tarefas de acordo com o filtro selecionado
-                    foreach ($tarefas as $tarefa) {
-                        if ($filtro === 'all' ||$tarefa['typeOfData'] === $filtro) {
-                            echo "<li class='li-task-block'>
+                // Buscar tarefas com base no filtro
+                $tarefas = buscarTarefas($filtro);
+
+                // Filtrar tarefas de acordo com o filtro selecionado
+                foreach ($tarefas as $tarefa) {
+                    if ($filtro === 'all' || $tarefa['typeOfData'] === $filtro) {
+                        echo "<li class='li-task-block'>
                                 <div class='task_block'>
                                     <strong>{$tarefa['title']}</strong> <br> {$tarefa['description']} <br>
                                     <form method='post' action=''>
-                                        <input type='hidden' name='titulo' value='{$tarefa['title']}'>
-                                        <button type='submit' name='deletar_tarefa'>Delete</button>
-                                    </form>
+                                        <input type='hidden' name='titulo' value='{$tarefa['title']}'>";
+                        
+                        // Verifica se a tarefa está completa ou incompleta
+                        if ($tarefa['is_completed'] == 0) {
+                            echo "<button type='submit' name='tarefa_completa'>Completa</button>";
+                        } else {
+                            echo "<button type='submit' name='tarefa_incompleta'>Descompleta</button>";
+                        }
+                        
+                        echo "</form>
                                 </div>
                             </li>";
-                        }
                     }
+                }
                 ?>
+
             </ul>
+            <h3>Tarefas completas: 
+                <?php tarefasFeitas(); ?> 
+            </h3>
             <hr id='linha'>
                 <h3>Notas: </h3>
                 <div class='notes_inputs'>
@@ -137,9 +149,11 @@
                     ?>
                 </ul>
                 </div>
+                <div class='container'>
                 <h3>Calendário: </h3>
                 <h4 id="data"></h4>
                 <div id="calendar"></div>
+                </div>
             </div>
         </main>
         <script src="script.js"></script>

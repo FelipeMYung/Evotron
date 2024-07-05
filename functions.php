@@ -21,7 +21,7 @@ function buscarTarefas() {
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
  
-    $sql = "SELECT title, description, due_date, typeOfData FROM tasks";
+    $sql = "SELECT title, description, due_date, typeOfData, is_completed FROM tasks";
     $result = $conn->query($sql);
  
     if ($result === false) {
@@ -38,7 +38,25 @@ function buscarTarefas() {
  
     return $tarefas;
 }
- 
+function tarefasFeitas(){
+    global $conn;   
+
+    $sql = "SELECT COUNT(*) as total_completas FROM tasks WHERE is_completed = 1";
+    $result = $conn->query($sql);
+
+    if ($result === false) {
+        die("Erro na consulta SQL: " . $conn->error);
+    }
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $contador_completas = $row['total_completas'];
+        echo "Total de tarefas completas: " . $contador_completas;
+    } else {
+        echo "Nenhuma tarefa completa encontrada.";
+    }
+}
+
 // Função para buscar todos os eventos no banco de dados
 function buscarEvento() {
     global $conn; // Tornar $conn global dentro da função
@@ -198,7 +216,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deletar_evento"])) {
         }
     }
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se o botão "Completa" foi clicado
+    if (isset($_POST["tarefa_completa"])) {
+        if (!empty($_POST["titulo"])) {
+            $titulo = $conn->real_escape_string($_POST["titulo"]);
+            $sql = "UPDATE tasks SET is_completed = 1 WHERE title = '$titulo'";
 
+            if ($conn->query($sql) === TRUE) {
+                //echo "Tarefa marcada como completa!";
+            } else {
+                //echo "Erro ao marcar tarefa como completa: " . $conn->error;
+            }
+        }
+    }
+    
+    // Verifica se o botão "Descompleta" foi clicado
+    if (isset($_POST["tarefa_incompleta"])) {
+        if (!empty($_POST["titulo"])) {
+            $titulo = $conn->real_escape_string($_POST["titulo"]);
+            $sql = "UPDATE tasks SET is_completed = 0 WHERE title = '$titulo'";
+
+            if ($conn->query($sql) === TRUE) {
+               // echo "Tarefa marcada como incompleta!";
+            } else {
+                //echo "Erro ao marcar tarefa como incompleta: " . $conn->error;
+            }
+        }
+    }
+}
 // função para calcular o prazo
 // SE(prazo<24:00 restantes){colocar na fileira de HOJE}SENAO{colocar na fileira PRÓXIMOS}
 ?>
