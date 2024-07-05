@@ -87,7 +87,8 @@
                                 <div class='task_block'>
                                     <strong>{$tarefa['title']}</strong> <br> {$tarefa['description']} <br>
                                     <form method='post' action=''>
-                                        <input type='hidden' name='titulo' value='{$tarefa['title']}'>";
+                                        <input type='hidden' name='titulo' value='{$tarefa['title']}'>
+                                        <button type='submit' name='deletar_tarefa'>Delete</button>";
                         
                         // Verifica se a tarefa está completa ou incompleta
                         if ($tarefa['is_completed'] == 0) {
