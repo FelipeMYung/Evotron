@@ -51,8 +51,8 @@ body {
     color: #ddd;
 }
 .form-section input[type="submit"] {
-    background-color: #4ad14a;
-    color: #0c0c0c;
+    background-color: #00cc00;;
+    color: white;
     border: none;
     padding: 10px;
     margin: 10px 0;
@@ -61,8 +61,8 @@ body {
     transition: background-color 0.3s;
 }
 .form-section input[type="submit"]:hover {
-    background-color: #00cc00;
-    color: white;
+    background-color: #034903;
+
 }
 .form-section label {
     text-align: left;

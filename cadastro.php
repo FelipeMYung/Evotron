@@ -13,9 +13,9 @@
             <h2>Login</h2>
             <form>
                 <label for="login-nome">Nome:</label>
-                <input type="text" id="login-nome" name="nome" placeholder='Nome usuário' required>
+                <input type="text" id="login-nome" name="username" placeholder='Nome usuário' required>
                 <label for="login-senha">Senha:</label>
-                <input type="password" id="login-senha" name="senha" placeholder='Senha' required>
+                <input type="password" id="login-senha" name="password" placeholder='Senha' required>
                 <input type="submit" value="Entrar">
             </form>
         </div>
@@ -26,11 +26,11 @@
             <h2>Cadastro</h2>
             <form>
                 <label for="cadastro-nome">Nome:</label>
-                <input type="text" id="cadastro-nome" name="nome" placeholder='Nome usuário' required>
+                <input type="text" id="cadastro-nome" name="username" placeholder='Nome usuário' required>
                 <label for="cadastro-email">Email:</label>
                 <input type="email" id="cadastro-email" name="email" placeholder='Email' required>
                 <label for="cadastro-senha">Senha:</label>
-                <input type="password" id="cadastro-senha" name="senha" placeholder='Senha' required>
+                <input type="password" id="cadastro-senha" name="password" placeholder='Senha' required>
                 <input type="submit" value="Cadastrar">
             </form>
         </div>
