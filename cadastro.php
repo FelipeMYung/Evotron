@@ -18,6 +18,7 @@
                 <input type="password" id="login-senha" name="password" placeholder='Senha' required>
                 <input type="submit" value="Entrar">
             </form>
+            <a href="index.php">Voltar para o início</a>
         </div>
 
         <div class="separator"></div>
@@ -33,6 +34,7 @@
                 <input type="password" id="cadastro-senha" name="password" placeholder='Senha' required>
                 <input type="submit" value="Cadastrar">
             </form>
+            <a href="index.php">Voltar para o início</a>
         </div>
     </div>
 </body>
