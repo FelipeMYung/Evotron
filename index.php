@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Página Inicial</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="estilos/style.css">
     </head>
     <body>
         <header>
@@ -76,7 +76,6 @@
 
                 // Definir o filtro
                 $filtro = isset($_GET['filter']) ? $_GET['filter'] : 'all';
-
                 // Buscar tarefas com base no filtro
                 $tarefas = buscarTarefas($filtro);
 
@@ -153,7 +152,7 @@
                 <div class='container'>
                 <h3>Calendário: </h3>
                 <h4 id="data"></h4>
-                <div id="calendar"></div>
+                <div id="calendar"></div> <!-- Os eventos devem ser marcados no calendário -->
                 </div>
             </div>
         </main>
