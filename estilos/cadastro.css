@@ -1,74 +1,82 @@
-body {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #000000;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: #000;
+    color: #fff;
 }
+
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 600px;
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 10px;
-}
-.form-section {
-    width: 45%;
-    padding: 20px;
-    border-radius: 10px;
     text-align: center;
-    backdrop-filter: blur(5px);
 }
-.separator {
-    width: 20px;
-    height: 100%;
-    background-color: #eee;
-    margin: 0 10px;
-}
-.form-section h2 {
+
+h1 {
     margin-bottom: 20px;
-    color: #481589;
 }
-.form-section form {
+
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cadastro, .login {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+    max-width: 100%;
+}
+
+h2 {
+    color: #a020f0; /* Cor roxa */
+    margin-bottom: 20px;
+}
+
+form {
     display: flex;
     flex-direction: column;
 }
-.form-section input[type="text"],
-.form-section input[type="email"],
-.form-section input[type="password"] {
-    background-color:transparent;
-    border: 1px solid #eee;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    color: #eee;
-}
-.form-section input::placeholder {
-    color: #ddd;
-}
-.form-section input[type="submit"] {
-    background-color: #00cc00;;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.form-section input[type="submit"]:hover {
-    background-color: #034903;
 
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
 }
-.form-section label {
-    text-align: left;
-    color: #481589;
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ff00; /* Cor verde */
+    color: #000;
+    cursor: pointer;
 }
-a{
-    text-decoration: none;
+
+button:hover {
+    background-color: #136913;
     color: white;
+}
+
+.back-link {
+    margin-top: 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
