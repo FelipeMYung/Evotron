@@ -1,17 +1,5 @@
 <?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "organizacao_tarefas";
- 
-$conn = new mysqli($servername, $username, $password, $dbname);
- 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-}
- 
+include('conexao.php');
 // Função para buscar todas as tarefas no banco de dados
 function buscarTarefas() {
     global $conn; // Tornar $conn global dentro da função
