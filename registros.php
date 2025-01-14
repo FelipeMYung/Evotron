@@ -1,5 +1,6 @@
 <?php
-include("protect.php")
+include("protect.php");
+include("functions.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +37,26 @@ include("protect.php")
                 <div><button class="btn-humor humor-horrivel"></button><p>Horrível</p></div>
             </div>
         <h1>Registros:</h1>
-        
+        <h3>Notas: </h3>
+                <div class='notes_inputs'>
+                <form method="post" class="notes-container" class= "Bunton">
+                    <input type="text" name="tituloNota" placeholder="Título">
+                    <textarea name="conteudoNota" cols='2'id="main_notes" placeholder="Conteúdo"></textarea>
+                    <button id="note_button" name="adicionar_nota"><p>Enviar</p></button>
+                </form>
+                <ul>
+                <?php
+                    $notas = buscarNotas();
+                    foreach($notas as $nota){
+                        echo "<li class='note_block'><div><strong>{$nota['title']} </strong> -<br> {$nota['note']}</div>
+                        <form method='post' action=''>
+                            <input type='hidden' name='tituloNota' value='{$nota['title']}'>
+                            <button type='submit' name='deletar_nota'>Delete</button>
+                        </form>
+                        </li>";
+                    }
+                    ?>
+                </ul>
+                </div>
 </body>
 </html>
