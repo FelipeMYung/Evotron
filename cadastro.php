@@ -93,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 </head>
 <body>
+    <h1>Entrar:</h1>
     <div id="form-container" data-mode="login">
         <h2>Login</h2>
         <form method="POST">

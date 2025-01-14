@@ -111,7 +111,7 @@
                 <?php tarefasFeitas(); ?> 
             </h4>
             <hr id='linha'>
-            <h3>Humor: </h3>
+            <button id="btn-humor-inicio"><a href="registros.php">Humor</a></button>
             <h4>Como você está?</h4>
             <div class="opcoes-humor">
                 <div><button class="btn-humor humor-otimo"><img src="./estilos/img/smiley.png" alt=""></button><p>Ótimo</p></div>

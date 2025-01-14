@@ -26,8 +26,8 @@ include("protect.php")
                 </ul>
             </nav>
         </header>
-        <h1>Registros:</h1>
-        <h4>Como você está?</h4>
+
+        <h2>Como você está?</h2>
             <div class="opcoes-humor">
                 <div><button class="btn-humor humor-otimo"><img src="./estilos/img/smiley.png" alt=""></button><p>Ótimo</p></div>
                 <div><button class="btn-humor humor-bem"><img src="./estilos/img/happiness.png" alt=""></button><p>Bem</p></div>
@@ -35,5 +35,7 @@ include("protect.php")
                 <div><button class="btn-humor humor-mal"><img src="./estilos/img/sad-face.png" alt=""></button><p>Mal</p></div>
                 <div><button class="btn-humor humor-horrivel"></button><p>Horrível</p></div>
             </div>
+        <h1>Registros:</h1>
+        
 </body>
 </html>
